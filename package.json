@@ -64,6 +64,7 @@
     "@typescript-eslint/eslint-plugin": "^4.19.0",
     "@typescript-eslint/parser": "^4.19.0",
     "autoprefixer": "^9.8.6",
+    "chokidar": "^3.5.1",
     "eslint": "^7.22.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-import": "^2.22.1",
@@ -74,5 +75,9 @@
     "postcss": "^7.0.35",
     "prettier": "^2.2.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3"
+  },
+  "engines": {
+    "node": "15.11.0",
+    "npm": "7.10.0"
   }
 }
