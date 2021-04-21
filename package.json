@@ -1,6 +1,6 @@
 {
-  "name": "react-ts-temp",
-  "version": "0.1.0",
+  "name": "trevfolio-2-node",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.1.1",
