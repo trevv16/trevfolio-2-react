@@ -7,8 +7,9 @@ WORKDIR /trevfolio-client
 
 # Install app dependencies
 COPY package*.json ./
-RUN npm install
-RUN npm install -g npm
+RUN npm install -g npm@7.10.0
+RUN npm --version
+RUN ["npm", "install"]
 
 # Bundle app source
 COPY . .

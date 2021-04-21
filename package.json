@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.1.1",
+    "@tailwindcss/aspect-ratio": "^0.2.0",
     "@tailwindcss/forms": "^0.2.1",
     "@tailwindcss/typography": "^0.4.0",
     "@testing-library/jest-dom": "^5.11.4",
@@ -29,7 +30,11 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "docker-build:dev": "docker build -t trevva/trevfolio-2-react:0.0.1 .",
+    "docker-build:prod": "docker build -t trevva/trevfolio-2-react:0.0.1 .",
+    "docker-run:dev": "docker run -p 3000:3000 trevva/trevfolio-2-react:0.0.1",
+    "docker-run:prod": ""
   },
   "eslintConfig": {
     "extends": [
