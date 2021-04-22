@@ -1,21 +1,22 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import PublicApp from './PublicApp';
+import AuthenticatedApp from './AuthenticatedApp';
 
-import { HomePage } from './views/index';
-import { Navigation, Footer } from './components/index';
+export default function App(props: any) {
+  const [checkLoggedIn, setCheckLoggedIn] = useState(false);
+  const { isLoggedIn } = props;
 
-function App() {
-  return (
-    <div>
-      <Navigation />
-      <Router>
-        <Switch>
-          <Route exact path='/' component={HomePage} />
-        </Switch>
-      </Router>
-      <Footer />
-    </div>
-  );
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      setCheckLoggedIn(true);
+    } else {
+      setCheckLoggedIn(false);
+    }
+  }, [isLoggedIn]);
+
+  if (checkLoggedIn === false && !localStorage.getItem('token')) {
+    return <PublicApp />;
+  }
+
+  return <AuthenticatedApp />;
 }
-
-export default App;
