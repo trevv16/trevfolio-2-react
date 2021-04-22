@@ -3,11 +3,11 @@ export { default as AboutPage } from './AboutPage';
 export { default as ResumePage } from './ResumePage';
 export { default as ContactPage } from './ContactPage';
 
-export { default as ProjectsPage } from './ProjectsPage';
-export { default as ProjectDetailPage } from './ProjectDetailPage';
+export { default as ProjectsPage } from './projects/ProjectsPage';
+export { default as ProjectDetailPage } from './projects/ProjectDetailPage';
 
-export { default as SkillsPage } from './SkillsPage';
-export { default as SkillDetailPage } from './SkillDetailPage';
+export { default as SkillsPage } from './skills/SkillsPage';
+export { default as SkillDetailPage } from './skills/SkillDetailPage';
 // Error Pages
 export { default as Error404 } from './error/Error404';
 export { default as Error500 } from './error/Error500';
