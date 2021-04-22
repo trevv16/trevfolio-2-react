@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { CameraIcon } from '@heroicons/react/solid';
+import { Newsletter } from '../components/index';
 
 export default function AboutPage() {
   return (
@@ -105,6 +106,7 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
+      <Newsletter />
     </>
   );
 }
