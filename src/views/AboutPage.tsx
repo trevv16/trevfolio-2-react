@@ -8,9 +8,9 @@ export default function AboutPage() {
       <Helmet>
         <title>About | Trevor's Portfolio</title>
       </Helmet>
-      <div className='bg-white overflow-hidden'>
+      <div className='overflow-hidden'>
         <div className='relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8'>
-          <div className='hidden lg:block bg-gray-50 absolute top-0 bottom-0 left-3/4 w-screen' />
+          <div className='mt-1 hidden lg:block bg-gray-50 absolute top-0 bottom-0 left-3/4 w-screen' />
           <div className='mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none'>
             <div>
               <h2 className='text-base text-indigo-600 font-semibold tracking-wide uppercase'>About Me</h2>
