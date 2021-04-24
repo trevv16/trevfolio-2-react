@@ -38,15 +38,19 @@ export default function ProjectsPage() {
   const ProjectCard = ({ project }: any) => {
     return (
       <div className='my-12 space-y-4'>
-        <div className='aspect-w-3 aspect-h-2'>
-          <img className='object-cover shadow-lg rounded-lg' src={project.thumbnail} alt='' />
-        </div>
+        <a href={`/projects/${project._id}`}>
+          <div className='aspect-w-3 aspect-h-2'>
+            <img className='object-cover shadow-lg rounded-lg' src={project.thumbnail} alt='' />
+          </div>
+        </a>
 
         <div className='space-y-2'>
-          <div className='text-lg leading-6 font-medium space-y-1'>
-            <h3 className='text-3xl truncate'>{project.title}</h3>
-            <p className='text-sm text-indigo-600'>{project.published}</p>
-          </div>
+          <a href={`/projects/${project._id}`}>
+            <div className='text-lg leading-6 font-medium space-y-1'>
+              <h3 className='text-3xl truncate'>{project.title}</h3>
+              <p className='text-sm text-indigo-600'>{project.published}</p>
+            </div>
+          </a>
           <ul className='flex space-x-5'>
             <li>
               <a href={project.github_url} rel='noopener noreferrer' className='text-gray-400 hover:text-gray-500'>
@@ -82,11 +86,9 @@ export default function ProjectsPage() {
           </div>
           <ul className='space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8'>
             {projects.map((project) => (
-              <a key={shortid.generate()} href={`/projects/${project._id}`}>
-                <li>
-                  <ProjectCard project={project} />
-                </li>
-              </a>
+              <li key={shortid.generate()}>
+                <ProjectCard project={project} />
+              </li>
             ))}
           </ul>
         </div>
