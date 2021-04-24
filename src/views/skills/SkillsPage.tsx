@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import shortid from 'shortid';
 
 type SkillType = {
   _id: string;
@@ -86,7 +87,7 @@ export default function SkillsPage() {
           <ul className='mx-auto grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 md:gap-x-6 lg:max-w-5xl lg:gap-x-8 lg:gap-y-12 xl:grid-cols-6'>
             {skillList.map((skill: any) => {
               return (
-                <a key={skill._id} href={`/skills/${skill._id}`}>
+                <a key={shortid.generate()} href={`/skills/${skill._id}`}>
                   <li>
                     <div className='space-y-4'>
                       <img
@@ -115,7 +116,7 @@ export default function SkillsPage() {
       <div>
         {skillCategories.map((skill: SkillType, i: number) => {
           return (
-            <div key={`skill-${i}`}>
+            <div key={shortid.generate()}>
               <div className='my-12 relative'>
                 <div className='absolute inset-0 flex items-center' aria-hidden='true'>
                   <div className='w-full border-t border-gray-300' />

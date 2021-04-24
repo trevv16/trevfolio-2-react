@@ -1,12 +1,143 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Newsletter } from '../components/index';
 import { BookOpenIcon } from '@heroicons/react/outline';
 import { AiOutlineSafetyCertificate } from 'react-icons/ai';
 import { FaAws } from 'react-icons/fa';
 import { SiKubernetes, SiLinux, SiMicrosoftazure } from 'react-icons/si';
+import shortid from 'shortid';
+
+type SkillType = {
+  _id: string;
+  category: string;
+  name: string;
+  description: string;
+  thumbnail: string;
+};
 
 export default function ResumePage() {
+  const [skillCategories, setSkillCategories] = useState<any[]>([]);
+  const skills: SkillType[] = [
+    {
+      _id: 'k24l1fsgd323mvb89s',
+      category: 'Front-End',
+      name: 'React',
+      description: '',
+      thumbnail:
+        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
+    },
+    {
+      _id: 'k24l1dfoadfwvb89s',
+      category: 'Back-End',
+      name: 'Node',
+      description: '',
+      thumbnail:
+        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
+    },
+    {
+      _id: 'k24l1fsgdsab3bvb89s',
+      category: 'Front-End',
+      name: 'Typescript',
+      description: '',
+      thumbnail:
+        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
+    },
+    {
+      _id: 'k24af2m2e2f423bvbafd',
+      category: 'Back-End',
+      name: 'Typescript',
+      description: '',
+      thumbnail:
+        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
+    },
+    {
+      _id: 'l2nfada7a5j7l8n42',
+      category: 'Deployment',
+      name: 'AWS',
+      description: '',
+      thumbnail:
+        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
+    }
+  ];
+
+  const getSkillCategories = (skills: any) => {
+    let categories: any[] = [];
+
+    skills.forEach((skill: any) => {
+      const currentCategory = skill.category;
+
+      if (!categories.includes(currentCategory)) {
+        categories.push(currentCategory);
+      }
+    });
+
+    return categories;
+  };
+
+  useEffect(() => {
+    const skillList = getSkillCategories(skills);
+
+    setSkillCategories(skillList);
+  }, []);
+
+  const SkillCards = (props: any) => {
+    const data = skills;
+    const skillList = data.filter((skill: any) => {
+      return skill.category === props.categoryName;
+    });
+
+    return (
+      <div className='max-w-7xl mx-auto px-4 text-center sm:px-6 lg:px-8 lg:py-8'>
+        <div className='space-y-8 sm:space-y-12'>
+          <ul className='mx-auto grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 md:gap-x-6 lg:max-w-5xl lg:gap-x-8 lg:gap-y-12 xl:grid-cols-6'>
+            {skillList.map((skill: any) => {
+              return (
+                <a key={shortid.generate()} href={`/skills/${skill._id}`}>
+                  <li>
+                    <div className='space-y-4'>
+                      <img
+                        className='hover:shadow-md mx-auto h-20 w-20 rounded-full lg:w-24 lg:h-24'
+                        src={skill.thumbnail}
+                        alt=''
+                      />
+                      <div className='space-y-2'>
+                        <div className='text-xs font-medium lg:text-sm'>
+                          <h3>{skill.name}</h3>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </a>
+              );
+            })}
+          </ul>
+        </div>
+      </div>
+    );
+  };
+
+  const SkillSection = () => {
+    return (
+      <div>
+        {skillCategories.map((skill: SkillType, i: number) => {
+          return (
+            <div key={shortid.generate()}>
+              <div className='my-12 relative'>
+                <div className='absolute inset-0 flex items-center' aria-hidden='true'>
+                  <div className='w-full border-t border-gray-300' />
+                </div>
+                <div className='relative flex justify-start'>
+                  <span className='pr-3 bg-white text-lg font-medium text-indigo-600'>{skill}</span>
+                </div>
+              </div>
+              <SkillCards categoryName={skill} />
+            </div>
+          );
+        })}
+      </div>
+    );
+  };
+
   const Header = () => {
     return (
       <>
@@ -15,7 +146,7 @@ export default function ResumePage() {
             <div className='px-4 lg:w-1/2 sm:px-8 xl:pr-16'>
               <h1 className='text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl'>
                 <span className='block xl:inline'>Trevor Njeru</span>{' '}
-                <span className='mt-2 block text-indigo-600 text-3xl'>Developer</span>
+                <span className='mt-4 block text-indigo-600 text-3xl'>Full Stack Developer</span>
               </h1>
               <p className='mt-3 max-w-md mx-auto text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl'>
                 Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
@@ -152,7 +283,7 @@ export default function ResumePage() {
             </div>
             <ul className='mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
               {certifications.map((cert) => (
-                <li key={cert.email} className='col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200'>
+                <li key={shortid.generate()} className='col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200'>
                   <div className='w-full flex items-center justify-between p-6 space-x-6'>
                     <div className='flex-1 truncate'>
                       <div className='flex items-center space-x-3'>
@@ -210,6 +341,7 @@ export default function ResumePage() {
                 Start building for free, then add a site plan to go live. Account plans unlock additional features.
               </p>
             </div>
+            <SkillSection />
           </div>
         </div>
       </>

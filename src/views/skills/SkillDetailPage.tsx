@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import dayjs from 'dayjs';
 import { HiOutlineEye, HiOutlineCode } from 'react-icons/hi';
+import shortid from 'shortid';
 
 type SkillType = {
   _id: string;
@@ -92,11 +93,11 @@ export default function SkillDetailPage() {
           </div>
           <ul className='space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8'>
             {projects.map((project) => (
-              // <a href={`/projects/${project._id}`}>
-              <li key={project._id}>
-                <ProjectCard project={project} />
-              </li>
-              // {/* </a> */}
+              <a key={shortid.generate()} href={`/projects/${project._id}`}>
+                <li>
+                  <ProjectCard project={project} />
+                </li>
+              </a>
             ))}
           </ul>
         </div>
