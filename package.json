@@ -34,11 +34,7 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject",
-    "docker-build:dev": "docker build -t trevva/trevfolio-2-react:0.0.1 .",
-    "docker-build:prod": "docker build -t trevva/trevfolio-2-react:0.0.1 .",
-    "docker-run:dev": "docker run -p 3000:3000 trevva/trevfolio-2-react:0.0.1",
-    "docker-run:prod": ""
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
