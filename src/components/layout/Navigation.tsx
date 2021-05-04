@@ -11,7 +11,7 @@ export default function Navigation() {
   const currentPage = window.location.pathname;
 
   return (
-    <Disclosure as='nav' className='bg-white shadow'>
+    <Disclosure as='nav' className='font-sans bg-white shadow'>
       {/* eslint-disable max-len */}
       {({ open }) => (
         <>

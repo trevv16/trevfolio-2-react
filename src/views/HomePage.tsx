@@ -5,7 +5,7 @@ import { Newsletter, Resume } from '../components/index';
 export default function HomePage() {
   const Intro = () => (
     <>
-      <div className='max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8'>
+      <div className='font-sans max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8'>
         <div className='-mt-12 my-8 aspect-w-16 aspect-h-6'>
           <img className='object-cover shadow-lg rounded-lg' src='trev-intro.jpg' alt='' />
         </div>

@@ -13,8 +13,8 @@ export default function AboutPage() {
           <div className='mt-1 hidden lg:block bg-gray-50 absolute top-0 bottom-0 left-3/4 w-screen' />
           <div className='mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none'>
             <div>
-              <h2 className='text-base text-indigo-600 font-semibold tracking-wide uppercase'>About Me</h2>
-              <h3 className='mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl'>
+              <h2 className='font-sans text-base text-indigo-600 font-semibold tracking-wide uppercase'>About Me</h2>
+              <h3 className='font-sans mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl'>
                 Trevor Njeru
               </h3>
             </div>
@@ -56,19 +56,19 @@ export default function AboutPage() {
                   </div>
                   <figcaption className='mt-3 flex text-sm text-gray-500'>
                     <CameraIcon className='flex-none w-5 h-5 text-gray-400' aria-hidden='true' />
-                    <span className='ml-2'>Photograph by Ronnie Kariuki</span>
+                    <span className='font-sans ml-2'>Photograph by Ronnie Kariuki</span>
                   </figcaption>
                 </figure>
               </div>
             </div>
             <div className='mt-8 lg:mt-0'>
               <div className='text-base max-w-prose mx-auto lg:max-w-none'>
-                <p className='text-lg text-gray-500'>
+                <p className='font-sans text-lg text-gray-500'>
                   Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque
                   tristique pellentesque. Blandit amet, sed aenean erat arcu morbi.
                 </p>
               </div>
-              <div className='mt-5 prose prose-indigo text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1'>
+              <div className='font-sans mt-5 prose prose-indigo text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1'>
                 <p>
                   Sollicitudin tristique eros erat odio sed vitae, consequat turpis elementum. Lorem nibh vel, eget
                   pretium arcu vitae. Eros eu viverra donec ut volutpat donec laoreet quam urna.

@@ -293,16 +293,16 @@ export default function Resume(props: any) {
       <Helmet>
         <title>Resume | Trevor's Portfolio</title>
       </Helmet>
-      <div className='container mx-auto max-w-7xl'>
+      <div className='font-sans container mx-auto max-w-7xl'>
         <Header />
         <Education />
       </div>
-      <div className='bg-indigo-600'>
+      <div className='font-sans bg-indigo-600'>
         <div className='container mx-auto max-w-7xl'>
           <Certifications />
         </div>
       </div>
-      <div className='container mx-auto max-w-7xl mt-12'>
+      <div className='font-sans container mx-auto max-w-7xl mt-12'>
         <Skills />
         <Experience />
       </div>

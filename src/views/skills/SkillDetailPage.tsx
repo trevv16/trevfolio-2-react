@@ -58,8 +58,10 @@ export default function SkillDetailPage(props: any) {
       <div className='mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-14'>
         <div className='space-y-12'>
           <div className='space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none'>
-            <h2 className='text-3xl font-extrabold tracking-tight sm:text-4xl'>Projects</h2>
-            <p className='text-xl text-gray-500'>View the projects I have completed relevant to this skill.</p>
+            <h2 className='font-sans text-3xl font-extrabold tracking-tight sm:text-4xl'>Projects</h2>
+            <p className='font-sans text-xl text-gray-500'>
+              View the projects I have completed relevant to this skill.
+            </p>
           </div>
 
           <ProjectList data={projects} />
@@ -72,11 +74,11 @@ export default function SkillDetailPage(props: any) {
     <div className='max-w-7xl mx-auto pt-8 px-4 sm:py-24 sm:px-6 lg:px-8'>
       <img className='w-52 h-52 mb-8 flex-shrink-0 mx-auto bg-black rounded-full' src={skill.thumbnail} alt='' />
       <div className='text-center'>
-        <h2 className='text-base font-semibold text-indigo-600 tracking-wide uppercase'>{skill.category}</h2>
-        <p className='mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl'>
+        <h2 className='font-sans text-base font-semibold text-indigo-600 tracking-wide uppercase'>{skill.category}</h2>
+        <p className='font-sans mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl'>
           {skill.name}
         </p>
-        <p className='max-w-xl mt-5 mx-auto text-xl text-gray-500'>{skill.description}</p>
+        <p className='font-sans max-w-xl mt-5 mx-auto text-xl text-gray-500'>{skill.description}</p>
       </div>
     </div>
   );

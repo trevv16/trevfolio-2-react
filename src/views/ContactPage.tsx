@@ -129,7 +129,7 @@ export default function ContactPage() {
             </defs>
             <rect width={404} height={404} fill='url(#85737c0e-0916-41d7-917f-596dc7edfa27)' />
           </svg>
-          <div className='text-center'>
+          <div className='font-sans text-center'>
             <h2 className='text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl'>Contact Me</h2>
             <p className='mt-4 text-lg leading-6 text-gray-500'>
               If you have a question or would like to get in contact with me, reach out to me here.
@@ -137,7 +137,7 @@ export default function ContactPage() {
           </div>
           <div className='mt-12'>
             {msgSuccess && renderStatusAlert(msgSuccess)}
-            <form action='#' method='POST' className='grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'>
+            <form action='#' method='POST' className='font-sans grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'>
               <div>
                 <label htmlFor='first_name' className='block text-sm font-medium text-gray-700'>
                   First name
