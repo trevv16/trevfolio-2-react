@@ -18,5 +18,6 @@ export default function App(props: any) {
     return <PublicApp />;
   }
 
-  return <AuthenticatedApp />;
+  // return <AuthenticatedApp />;
+  return <PublicApp />;
 }
