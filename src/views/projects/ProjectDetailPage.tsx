@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
+import React from 'react';
 import dayjs from 'dayjs';
 import { HiOutlineEye, HiOutlineCode } from 'react-icons/hi';
-import shortid from 'shortid';
 
-import { SkillList } from '../../components/index';
+import { SkillList, SeoHelmet } from '../../components/index';
 
 type SkillType = {
   _id: string;
@@ -138,9 +136,12 @@ export default function ProjectDetailPage() {
 
   return (
     <>
-      <Helmet>
-        <title>{`${project.title} | Trevor's Portfolio`}</title>
-      </Helmet>
+      <SeoHelmet
+        title={`${project.title} | Trevor's Portfolio`}
+        description=''
+        image=''
+        image_alt='Trevor Njeru logo'
+      />
       <div className='container mx-auto'>
         <Header />
         <div className='mx-auto max-w-7xl px-4 sm:py-8 sm:px-6 lg:px-8'>

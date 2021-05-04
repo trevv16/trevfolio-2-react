@@ -1,7 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 
-import { SkillList } from '../../components/index';
+import { SkillList, SeoHelmet } from '../../components/index';
 
 type SkillType = {
   _id: string;
@@ -57,9 +56,7 @@ export default function SkillsPage() {
 
   return (
     <>
-      <Helmet>
-        <title>Skills | Trevor's Portfolio</title>
-      </Helmet>
+      <SeoHelmet title="Skills | Trevor's Portfolio" description='' image='' image_alt='Trevor Njeru logo' />
       <div className='container mx-auto'>
         <div className='mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24'>
           <div className='space-y-12'>

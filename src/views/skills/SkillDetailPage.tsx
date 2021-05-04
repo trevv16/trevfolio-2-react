@@ -1,9 +1,7 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import dayjs from 'dayjs';
-import shortid from 'shortid';
 
-import { ProjectList } from '../../components/index';
+import { ProjectList, SeoHelmet } from '../../components/index';
 
 type SkillType = {
   _id: string;
@@ -85,9 +83,7 @@ export default function SkillDetailPage(props: any) {
 
   return (
     <>
-      <Helmet>
-        <title>{`${skill.name} | Trevor's Portfolio`}</title>
-      </Helmet>
+      <SeoHelmet title={`${skill.name} | Trevor's Portfolio`} description='' image='' image_alt='Trevor Njeru logo' />
       <div>
         <Header skill={skill} />
         <ProjectsSection />

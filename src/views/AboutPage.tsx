@@ -1,13 +1,10 @@
-import { Helmet } from 'react-helmet-async';
 import { CameraIcon } from '@heroicons/react/solid';
-import { Newsletter } from '../components/index';
+import { Newsletter, SeoHelmet } from '../components/index';
 
 export default function AboutPage() {
   return (
     <>
-      <Helmet>
-        <title>About | Trevor's Portfolio</title>
-      </Helmet>
+      <SeoHelmet title="About | Trevor's Portfolio" description='' image='' image_alt='Trevor Njeru logo' />
       <div className='overflow-hidden'>
         <div className='relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8'>
           <div className='mt-1 hidden lg:block bg-gray-50 absolute top-0 bottom-0 left-3/4 w-screen' />

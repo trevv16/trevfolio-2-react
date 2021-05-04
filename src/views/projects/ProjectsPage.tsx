@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import dayjs from 'dayjs';
 
-import { ProjectList } from '../../components/index';
+import { ProjectList, SeoHelmet } from '../../components/index';
 
 export default function ProjectsPage() {
   const projects = [
@@ -37,9 +37,7 @@ export default function ProjectsPage() {
 
   return (
     <>
-      <Helmet>
-        <title>Projects | Trevor's Portfolio</title>
-      </Helmet>
+      <SeoHelmet title="Projects | Trevor's Portfolio" description='' image='' image_alt='Trevor Njeru logo' />
       <div className='mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24'>
         <div className='space-y-12'>
           <div className='space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none'>

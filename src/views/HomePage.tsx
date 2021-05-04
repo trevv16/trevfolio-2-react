@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { Newsletter, Resume } from '../components/index';
+import { Newsletter, Resume, SeoHelmet } from '../components/index';
 
 export default function HomePage() {
   const Intro = () => (
@@ -24,9 +23,8 @@ export default function HomePage() {
 
   return (
     <>
-      <Helmet>
-        <title>Trevor's Portfolio</title>
-      </Helmet>
+      <SeoHelmet title="Trevor's Portfolio" description='' image='' image_alt='Trevor Njeru logo' />
+      <div className='overflow-hidden'></div>
       <div className='container mx-auto'>
         <Intro />
       </div>

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useFormik } from 'formik';
 import api from '../utils/api';
-import { Alert } from '../components/index';
+import { Alert, SeoHelmet } from '../components/index';
 
 type ContactMessageType = {
   first_name: string;
@@ -80,9 +80,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <Helmet>
-        <title>Contact | Trevor's Portfolio</title>
-      </Helmet>
+      <SeoHelmet title="Contact | Trevor's Portfolio" description='' image='' image_alt='Trevor Njeru logo' />
       <div className='py-16 px-4 overflow-hidden sm:px-6 lg:px-8 lg:py-24'>
         <div className='relative max-w-xl mx-auto'>
           <svg
