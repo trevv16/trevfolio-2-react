@@ -8,7 +8,6 @@ import {
   ResetPasswordPage,
   HomePage,
   AboutPage,
-  ResumePage,
   ContactPage,
   ProjectsPage,
   ProjectDetailPage,
@@ -46,7 +45,6 @@ export default function PublicApp() {
             <Route exact path='/projects' component={ProjectsPage} />
             <Route exact path='/about' component={AboutPage} />
             <Route exact path='/contact' component={ContactPage} />
-            <Route exact path='/resume' component={ResumePage} />
             <Route exact path='/' component={HomePage} />
 
             {/* Error Pages */}
