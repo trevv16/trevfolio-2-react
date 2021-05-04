@@ -7,5 +7,6 @@ export { default as Resume } from './Resume';
 export { default as Alert } from './Alert';
 export { default as Newsletter } from './Newsletter';
 
+export { default as SeoHelmet } from './SeoHelment';
 export { default as SkillList } from './SkillList';
 export { default as ProjectList } from './ProjectList';
