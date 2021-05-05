@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import shortid from 'shortid';
 
+import { Icon } from '../components/index';
+
 type SkillType = {
   _id: string;
   category: string;
@@ -46,11 +48,7 @@ export default function SkillList(props: any) {
                 <a key={shortid.generate()} href={`/skills/${skill._id}`}>
                   <li>
                     <div className='space-y-4'>
-                      <img
-                        className='hover:shadow-md mx-auto h-20 w-20 rounded-full lg:w-24 lg:h-24'
-                        src={skill.thumbnail}
-                        alt=''
-                      />
+                      <Icon size='w-20 h-20 lg:w-24 lg:h-24 mx-auto' skillName={skill.name} />
                       <div className='space-y-2'>
                         <div className='text-xs font-medium lg:text-sm'>
                           <h3 className='font-sans'>{skill.name}</h3>
