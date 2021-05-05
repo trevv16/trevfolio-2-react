@@ -51,6 +51,14 @@ export default function SkillsPage() {
       description: '',
       thumbnail:
         'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
+    },
+    {
+      _id: 'afgd23lnds8jmn42',
+      category: 'Deployment',
+      name: 'Docker',
+      description: '',
+      thumbnail:
+        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
     }
   ];
 
