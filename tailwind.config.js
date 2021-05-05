@@ -10,8 +10,11 @@ module.exports = {
       secondary: '#CE91D9',
       white: '#FFFFFF',
       success: '#63A375',
-      warning: '#F5D18F',
-      danger: '#92140C',
+      successDark: '#EDAB31',
+      warning: '#F2C269',
+      warningDark: '#F0BA56',
+      danger: '#D01E11',
+      dangerDark: '#92140C',
       gray: colors.coolGray
     },
     fontFamily: {
