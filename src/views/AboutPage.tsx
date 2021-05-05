@@ -10,7 +10,7 @@ export default function AboutPage() {
           <div className='mt-1 hidden lg:block bg-gray-50 absolute top-0 bottom-0 left-3/4 w-screen' />
           <div className='mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none'>
             <div>
-              <h2 className='font-sans text-base text-indigo-600 font-semibold tracking-wide uppercase'>About Me</h2>
+              <h2 className='font-sans text-base text-primary font-semibold tracking-wide uppercase'>About Me</h2>
               <h3 className='font-sans mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl'>
                 Trevor Njeru
               </h3>

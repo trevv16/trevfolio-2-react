@@ -16,7 +16,7 @@ export default function ProjectList(props: any) {
           <a href={`/projects/${project._id}`}>
             <div className='text-lg leading-6 font-medium space-y-1'>
               <h3 className='font-sans text-3xl truncate'>{project.title}</h3>
-              <p className='font-sans text-sm text-indigo-600'>{project.published}</p>
+              <p className='font-sans text-sm text-primary'>{project.published}</p>
             </div>
           </a>
           <ul className='flex space-x-5'>

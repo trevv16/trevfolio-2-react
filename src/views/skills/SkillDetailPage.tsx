@@ -72,7 +72,7 @@ export default function SkillDetailPage(props: any) {
     <div className='max-w-7xl mx-auto pt-8 px-4 sm:py-24 sm:px-6 lg:px-8'>
       <img className='w-52 h-52 mb-8 flex-shrink-0 mx-auto bg-black rounded-full' src={skill.thumbnail} alt='' />
       <div className='text-center'>
-        <h2 className='font-sans text-base font-semibold text-indigo-600 tracking-wide uppercase'>{skill.category}</h2>
+        <h2 className='font-sans text-base font-semibold text-primary tracking-wide uppercase'>{skill.category}</h2>
         <p className='font-sans mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl'>
           {skill.name}
         </p>

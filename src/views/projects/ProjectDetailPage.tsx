@@ -128,7 +128,7 @@ export default function ProjectDetailPage() {
             </li>
           </ul>
         </div>
-        <p className='font-sans mt-2 text-xl text-indigo-600'>{project.published}</p>
+        <p className='font-sans mt-2 text-xl text-primary'>{project.published}</p>
         <p className='font-sans mt-8 mx-auto text-xl text-gray-500'>{project.description}</p>
       </div>
     </div>

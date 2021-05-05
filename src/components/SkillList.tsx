@@ -78,7 +78,7 @@ export default function SkillList(props: any) {
                   <div className='w-full border-t border-gray-300' />
                 </div>
                 <div className='relative flex justify-start'>
-                  <span className='font-sans pr-3 bg-white text-lg font-medium text-indigo-600'>{category}</span>
+                  <span className='font-sans pr-3 bg-white text-lg font-medium text-primary'>{category}</span>
                 </div>
               </div>
               <SkillCards categoryName={category} />

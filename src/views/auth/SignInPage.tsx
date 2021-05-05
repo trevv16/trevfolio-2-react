@@ -13,7 +13,7 @@ export default function SignInPage() {
           <h2 className='mt-6 text-center text-3xl font-extrabold text-gray-900'>Sign in to your account</h2>
           <p className='mt-2 text-center text-sm text-gray-600 max-w'>
             {'Or '}
-            <a href='/signup' className='font-medium text-indigo-600 hover:text-indigo-500'>
+            <a href='/signup' className='font-medium text-primary hover:text-primary'>
               Sign Up
             </a>
           </p>
@@ -60,7 +60,7 @@ export default function SignInPage() {
                     id='remember_me'
                     name='remember_me'
                     type='checkbox'
-                    className='h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded'
+                    className='h-4 w-4 text-primary focus:ring-indigo-500 border-gray-300 rounded'
                   />
                   <label htmlFor='remember_me' className='ml-2 block text-sm text-gray-900'>
                     Remember me
@@ -68,7 +68,7 @@ export default function SignInPage() {
                 </div>
 
                 <div className='text-sm'>
-                  <a href='/forgot' className='font-medium text-indigo-600 hover:text-indigo-500'>
+                  <a href='/forgot' className='font-medium text-primary hover:text-primary'>
                     Forgot your password?
                   </a>
                 </div>
@@ -77,7 +77,7 @@ export default function SignInPage() {
               <div>
                 <button
                   type='submit'
-                  className='w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
+                  className='w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
                 >
                   Sign In
                 </button>
