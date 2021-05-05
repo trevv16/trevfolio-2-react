@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { useFormik } from 'formik';
 import api from '../utils/api';
 import { Alert, SeoHelmet } from '../components/index';
@@ -72,9 +71,9 @@ export default function ContactPage() {
 
   const renderStatusAlert = (status: boolean) => {
     if (status) {
-      return <Alert severity='success'>Successful - Your message was received.</Alert>;
+      return <Alert status='success'>Successful - Your message was received.</Alert>;
     } else {
-      return <Alert severity='success'>Error - There was a problem with your input</Alert>;
+      return <Alert status='success'>Error - There was a problem with your input</Alert>;
     }
   };
 
