@@ -1,11 +1,9 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
-import { SkillList } from '../components/index';
+import shortid from 'shortid';
 import { BookOpenIcon } from '@heroicons/react/outline';
 import { AiOutlineSafetyCertificate } from 'react-icons/ai';
-import { FaAws } from 'react-icons/fa';
-import { SiKubernetes, SiLinux, SiMicrosoftazure } from 'react-icons/si';
-import shortid from 'shortid';
+
+import { Icon, SkillList } from '../components/index';
 
 type SkillType = {
   _id: string;
@@ -90,10 +88,6 @@ export default function Resume(props: any) {
               <p className='mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl'>
                 Education
               </p>
-              <p className='max-w-xl mt-5 text-xl text-gray-500'>
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-                fugiat veniam occaecat fugiat aliqua.
-              </p>
             </div>
           </div>
         </div>
@@ -155,18 +149,6 @@ export default function Resume(props: any) {
       }
     ];
 
-    const getSkillIcon = (skill: string) => {
-      if (skill === 'aws') {
-        return <FaAws className='w-10 h-10 flex-shrink-0 hover:text-gray-500' />;
-      } else if (skill === 'linux') {
-        return <SiLinux className='w-10 h-10 flex-shrink-0 hover:text-gray-500' />;
-      } else if (skill === 'kubernetes') {
-        return <SiKubernetes className='w-10 h-10 flex-shrink-0 hover:text-gray-500' />;
-      } else if (skill === 'azure') {
-        return <SiMicrosoftazure className='w-10 h-10 flex-shrink-0 hover:text-gray-500' />;
-      }
-    };
-
     return (
       <>
         <div className='bg-primary'>
@@ -175,10 +157,6 @@ export default function Resume(props: any) {
               <p className='mt-1 text-4xl text-white font-extrabold sm:text-5xl sm:tracking-tight lg:text-6xl'>
                 Certifications
               </p>
-              <p className='max-w-xl mt-5 text-xl text-white'>
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-                fugiat veniam occaecat fugiat aliqua.
-              </p>
             </div>
             <ul className='mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
               {certifications.map((cert) => (
@@ -186,15 +164,15 @@ export default function Resume(props: any) {
                   <div className='w-full flex items-center justify-between p-6 space-x-6'>
                     <div className='flex-1 truncate'>
                       <div className='flex items-center space-x-3'>
-                        <h3 className='text-gray-900 text-sm font-medium truncate'>{cert.name}</h3>
-                        <span className='flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full'>
+                        <h3 className='text-gray-900 text-sm font-bold truncate'>{cert.name}</h3>
+                        <span className='flex-shrink-0 inline-block px-2 py-0.5 text-white text-xs font-bold bg-primaryLight rounded-full'>
                           {cert.skill}
                         </span>
                       </div>
                       <p className='mt-1 text-gray-500 text-sm truncate'>{cert.cert_from}</p>
                       <p className='mt-1 text-gray-500 text-sm truncate'>{cert.date}</p>
                     </div>
-                    {getSkillIcon(cert.skill_icon)}
+                    <Icon size='w-10 h-10' skillName={cert.skill_icon} />
                   </div>
                   <div>
                     <div className='-mt-px flex divide-x divide-gray-200'>
@@ -234,11 +212,12 @@ export default function Resume(props: any) {
           <div className='max-w-7xl mx-auto px-6'>
             <div className='text-left'>
               <p className='mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl'>
-                Skills
+                Highlighted Skills
               </p>
               <p className='max-w-xl mt-5 text-xl text-gray-500'>
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-                fugiat veniam occaecat fugiat aliqua.
+                <a href='/skills' className='text-primaryLight font-medium hover:text-gray-500'>
+                  View all of my relevant skills here.
+                </a>
               </p>
             </div>
             <SkillList skillData={skills} />
@@ -257,10 +236,6 @@ export default function Resume(props: any) {
               <p className='mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl'>
                 Experience
               </p>
-              <p className='max-w-xl mt-5 text-xl text-gray-500'>
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-                fugiat veniam occaecat fugiat aliqua.
-              </p>
             </div>
           </div>
         </div>
@@ -270,9 +245,6 @@ export default function Resume(props: any) {
 
   return (
     <>
-      <Helmet>
-        <title>Resume | Trevor's Portfolio</title>
-      </Helmet>
       <div className='font-sans container mx-auto max-w-7xl'>
         <Intro />
         <Education />
