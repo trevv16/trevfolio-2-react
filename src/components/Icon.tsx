@@ -9,6 +9,7 @@ import {
   SiCss3,
   SiNodeDotJs,
   SiReact,
+  SiTypescript,
   SiPython,
   SiDjango,
   SiFlask,
@@ -64,6 +65,10 @@ export default function HomePage(props: any) {
         return <SiReact className={`${size} flex-shrink-0 hover:text-gray-500`} />;
         break;
 
+      case 'typescript':
+        return <SiTypescript className={`${size} flex-shrink-0 hover:text-gray-500`} />;
+        break;
+
       case 'python':
         return <SiPython className={`${size} flex-shrink-0 hover:text-gray-500`} />;
         break;
@@ -93,5 +98,5 @@ export default function HomePage(props: any) {
     }
   };
 
-  return <>{getSkillIcon(skill)}</>;
+  return <>{getSkillIcon(skill.toLowerCase())}</>;
 }
