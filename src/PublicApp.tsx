@@ -30,8 +30,8 @@ export default function PublicApp() {
   return (
     <div>
       <Router>
-        <Switch>
-          <PublicLayout>
+        <PublicLayout>
+          <Switch>
             {/* Auth Routes */}
             <Route exact path='/signup' component={SignUpPage} />
             <Route exact path='/signin' component={SignInPage} />
@@ -49,11 +49,10 @@ export default function PublicApp() {
 
             {/* Error Pages */}
             <Route exact path='/500' component={Error500} />
-            <Route exact path='/404' component={Error404} />
 
-            {/* <Route path='*' component={Error404} /> */}
-          </PublicLayout>
-        </Switch>
+            <Route path='*' component={Error404} />
+          </Switch>
+        </PublicLayout>
       </Router>
     </div>
   );
