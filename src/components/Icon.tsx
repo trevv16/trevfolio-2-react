@@ -7,6 +7,7 @@ import {
   SiMicrosoftazure,
   SiHtml5,
   SiCss3,
+  SiTailwindcss,
   SiNodeDotJs,
   SiReact,
   SiTypescript,
@@ -55,6 +56,10 @@ export default function HomePage(props: any) {
 
       case 'css':
         return <SiCss3 className={`${size} flex-shrink-0 hover:text-gray-500`} />;
+        break;
+
+      case 'tailwind':
+        return <SiTailwindcss className={`${size} flex-shrink-0 hover:text-gray-500`} />;
         break;
 
       case 'node':
