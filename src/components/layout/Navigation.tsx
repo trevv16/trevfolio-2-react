@@ -20,12 +20,7 @@ export default function Navigation() {
               <div className='flex'>
                 <div className='flex-shrink-0 flex items-center'>
                   <a href='/'>
-                    <img
-                      className='block lg:hidden h-8 w-auto'
-                      src='https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg'
-                      alt='Workflow'
-                    />
-                    {/* <div className='aspect-w-5 aspect-h-2'></div> */}
+                    <img className='block lg:hidden h-8 w-auto' src='TN_logo.png' alt='Trevor Njeru logo' />
                     <img className='hidden lg:block w-28 h-auto' src='TN_logo.png' alt='Trevor Njeru logo' />
                   </a>
                 </div>
@@ -92,25 +87,41 @@ export default function Navigation() {
               {/* Current: "bg-primaryLight border-primary text-primary", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray hover:text-gray-700" */}
               <a
                 href='/about'
-                className='bg-primaryLight border-primary text-primary block pl-3 pr-4 py-2 border-l-4 text-base font-semibold'
+                className={`${
+                  currentPage === '/about'
+                    ? 'bg-primaryLight border-primary text-white'
+                    : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray hover:text-gray-700'
+                } block pl-3 pr-4 py-2 border-l-4 text-base font-semibold`}
               >
                 About
               </a>
               <a
                 href='/skills'
-                className='border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-semibold'
+                className={`${
+                  currentPage === '/skills'
+                    ? 'bg-primaryLight border-primary text-white'
+                    : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray hover:text-gray-700'
+                } block pl-3 pr-4 py-2 border-l-4 text-base font-semibold`}
               >
                 Skills
               </a>
               <a
                 href='/projects'
-                className='border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-semibold'
+                className={`${
+                  currentPage === '/projects'
+                    ? 'bg-primaryLight border-primary text-white'
+                    : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray hover:text-gray-700'
+                } block pl-3 pr-4 py-2 border-l-4 text-base font-semibold`}
               >
                 Projects
               </a>
               <a
                 href='/contact'
-                className='border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-semibold'
+                className={`${
+                  currentPage === '/contact'
+                    ? 'bg-primaryLight border-primary text-white'
+                    : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray hover:text-gray-700'
+                } block pl-3 pr-4 py-2 border-l-4 text-base font-semibold`}
               >
                 Contact
               </a>
