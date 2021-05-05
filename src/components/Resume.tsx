@@ -59,51 +59,27 @@ export default function Resume(props: any) {
     }
   ];
 
-  const Header = () => {
-    return (
-      <>
-        <div className='lg:relative'>
-          <div className='mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-48 lg:text-left'>
-            <div className='px-4 lg:w-1/2 sm:px-8 xl:pr-16'>
-              <h1 className='text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl'>
-                <span className='block xl:inline'>Trevor Njeru</span>{' '}
-                <span className='mt-4 block text-primary text-3xl'>Full Stack Developer</span>
-              </h1>
-              <p className='mt-3 max-w-md mx-auto text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl'>
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-                fugiat veniam occaecat fugiat aliqua.
-              </p>
-              <div className='mt-10 sm:flex sm:justify-center lg:justify-start'>
-                <div className='rounded-md shadow'>
-                  <a
-                    href='/projects'
-                    className='w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary md:py-4 md:text-lg md:px-10'
-                  >
-                    View Projects
-                  </a>
-                </div>
-                <div className='mt-3 rounded-md shadow sm:mt-0 sm:ml-3'>
-                  <a
-                    href='/contact'
-                    className='w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10'
-                  >
-                    Get in Touch
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className='relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full'>
-            <img
-              className='absolute inset-0 w-full h-full object-cover'
-              src='https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2102&q=80'
-              alt=''
-            />
-          </div>
+  const Intro = () => (
+    <>
+      <div className='font-sans max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8'>
+        <div className='-mt-10 my-8 aspect-w-16 aspect-h-6'>
+          <img className='object-cover shadow-lg rounded-lg' src='trev-intro.jpg' alt='' />
         </div>
-      </>
-    );
-  };
+        <div className='text-center'>
+          <h1 className='font-extrabold text-gray-900 text-5xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-6xl'>
+            Trevor Njeru
+          </h1>
+          <h1 className='mt-4 font-extrabold text-primary sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl'>
+            Full Stack Developer
+          </h1>
+          <p className='max-w-2xl mt-8 mx-auto text-xl text-gray-500'>
+            A computer science student based in Charlotte, NC. Enhancing my skills as a full stack developer with a keen
+            interest in design.
+          </p>
+        </div>
+      </div>
+    </>
+  );
 
   const Education = () => {
     return (
@@ -115,7 +91,8 @@ export default function Resume(props: any) {
                 Education
               </p>
               <p className='max-w-xl mt-5 text-xl text-gray-500'>
-                Start building for free, then add a site plan to go live. Account plans unlock additional features.
+                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
+                fugiat veniam occaecat fugiat aliqua.
               </p>
             </div>
           </div>
@@ -199,7 +176,8 @@ export default function Resume(props: any) {
                 Certifications
               </p>
               <p className='max-w-xl mt-5 text-xl text-white'>
-                Start building for free, then add a site plan to go live. Account plans unlock additional features.
+                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
+                fugiat veniam occaecat fugiat aliqua.
               </p>
             </div>
             <ul className='mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
@@ -259,7 +237,8 @@ export default function Resume(props: any) {
                 Skills
               </p>
               <p className='max-w-xl mt-5 text-xl text-gray-500'>
-                Start building for free, then add a site plan to go live. Account plans unlock additional features.
+                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
+                fugiat veniam occaecat fugiat aliqua.
               </p>
             </div>
             <SkillList skillData={skills} />
@@ -279,7 +258,8 @@ export default function Resume(props: any) {
                 Experience
               </p>
               <p className='max-w-xl mt-5 text-xl text-gray-500'>
-                Start building for free, then add a site plan to go live. Account plans unlock additional features.
+                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
+                fugiat veniam occaecat fugiat aliqua.
               </p>
             </div>
           </div>
@@ -294,7 +274,7 @@ export default function Resume(props: any) {
         <title>Resume | Trevor's Portfolio</title>
       </Helmet>
       <div className='font-sans container mx-auto max-w-7xl'>
-        <Header />
+        <Intro />
         <Education />
       </div>
       <div className='font-sans bg-primary'>
