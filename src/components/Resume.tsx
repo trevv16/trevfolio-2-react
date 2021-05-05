@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { Newsletter } from '../components/index';
+import React from 'react';
+import shortid from 'shortid';
 import { BookOpenIcon } from '@heroicons/react/outline';
 import { AiOutlineSafetyCertificate } from 'react-icons/ai';
-import { FaAws } from 'react-icons/fa';
-import { SiKubernetes, SiLinux, SiMicrosoftazure } from 'react-icons/si';
-import shortid from 'shortid';
+
+import { Icon, SkillList } from '../components/index';
 
 type SkillType = {
   _id: string;
@@ -15,8 +13,7 @@ type SkillType = {
   thumbnail: string;
 };
 
-export default function ResumePage() {
-  const [skillCategories, setSkillCategories] = useState<any[]>([]);
+export default function Resume(props: any) {
   const skills: SkillType[] = [
     {
       _id: 'k24l1fsgd323mvb89s',
@@ -60,129 +57,27 @@ export default function ResumePage() {
     }
   ];
 
-  const getSkillCategories = (skills: any) => {
-    let categories: any[] = [];
-
-    skills.forEach((skill: any) => {
-      const currentCategory = skill.category;
-
-      if (!categories.includes(currentCategory)) {
-        categories.push(currentCategory);
-      }
-    });
-
-    return categories;
-  };
-
-  useEffect(() => {
-    const skillList = getSkillCategories(skills);
-
-    setSkillCategories(skillList);
-  }, []);
-
-  const SkillCards = (props: any) => {
-    const data = skills;
-    const skillList = data.filter((skill: any) => {
-      return skill.category === props.categoryName;
-    });
-
-    return (
-      <div className='max-w-7xl mx-auto px-4 text-center sm:px-6 lg:px-8 lg:py-8'>
-        <div className='space-y-8 sm:space-y-12'>
-          <ul className='mx-auto grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 md:gap-x-6 lg:max-w-5xl lg:gap-x-8 lg:gap-y-12 xl:grid-cols-6'>
-            {skillList.map((skill: any) => {
-              return (
-                <a key={shortid.generate()} href={`/skills/${skill._id}`}>
-                  <li>
-                    <div className='space-y-4'>
-                      <img
-                        className='hover:shadow-md mx-auto h-20 w-20 rounded-full lg:w-24 lg:h-24'
-                        src={skill.thumbnail}
-                        alt=''
-                      />
-                      <div className='space-y-2'>
-                        <div className='text-xs font-medium lg:text-sm'>
-                          <h3>{skill.name}</h3>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                </a>
-              );
-            })}
-          </ul>
+  const Intro = () => (
+    <>
+      <div className='font-sans max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8'>
+        <div className='-mt-10 my-8 aspect-w-16 aspect-h-6'>
+          <img className='object-cover shadow-lg rounded-lg' src='trev-intro.jpg' alt='' />
+        </div>
+        <div className='text-center'>
+          <h1 className='font-extrabold text-gray-900 text-5xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-6xl'>
+            Trevor Njeru
+          </h1>
+          <h1 className='mt-4 font-extrabold text-primary sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl'>
+            Full Stack Developer
+          </h1>
+          <p className='max-w-2xl mt-8 mx-auto text-xl text-gray-500'>
+            A computer science student based in Charlotte, NC. Enhancing my skills as a full stack developer with a keen
+            interest in design.
+          </p>
         </div>
       </div>
-    );
-  };
-
-  const SkillSection = () => {
-    return (
-      <div>
-        {skillCategories.map((skill: SkillType, i: number) => {
-          return (
-            <div key={shortid.generate()}>
-              <div className='my-12 relative'>
-                <div className='absolute inset-0 flex items-center' aria-hidden='true'>
-                  <div className='w-full border-t border-gray-300' />
-                </div>
-                <div className='relative flex justify-start'>
-                  <span className='pr-3 bg-white text-lg font-medium text-indigo-600'>{skill}</span>
-                </div>
-              </div>
-              <SkillCards categoryName={skill} />
-            </div>
-          );
-        })}
-      </div>
-    );
-  };
-
-  const Header = () => {
-    return (
-      <>
-        <div className='lg:relative'>
-          <div className='mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-48 lg:text-left'>
-            <div className='px-4 lg:w-1/2 sm:px-8 xl:pr-16'>
-              <h1 className='text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl'>
-                <span className='block xl:inline'>Trevor Njeru</span>{' '}
-                <span className='mt-4 block text-indigo-600 text-3xl'>Full Stack Developer</span>
-              </h1>
-              <p className='mt-3 max-w-md mx-auto text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl'>
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-                fugiat veniam occaecat fugiat aliqua.
-              </p>
-              <div className='mt-10 sm:flex sm:justify-center lg:justify-start'>
-                <div className='rounded-md shadow'>
-                  <a
-                    href='/projects'
-                    className='w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10'
-                  >
-                    View Projects
-                  </a>
-                </div>
-                <div className='mt-3 rounded-md shadow sm:mt-0 sm:ml-3'>
-                  <a
-                    href='/contact'
-                    className='w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10'
-                  >
-                    Get in Touch
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className='relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full'>
-            <img
-              className='absolute inset-0 w-full h-full object-cover'
-              src='https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2102&q=80'
-              alt=''
-            />
-          </div>
-        </div>
-      </>
-    );
-  };
+    </>
+  );
 
   const Education = () => {
     return (
@@ -192,9 +87,6 @@ export default function ResumePage() {
             <div className='text-left'>
               <p className='mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl'>
                 Education
-              </p>
-              <p className='max-w-xl mt-5 text-xl text-gray-500'>
-                Start building for free, then add a site plan to go live. Account plans unlock additional features.
               </p>
             </div>
           </div>
@@ -257,28 +149,13 @@ export default function ResumePage() {
       }
     ];
 
-    const getSkillIcon = (skill: string) => {
-      if (skill === 'aws') {
-        return <FaAws className='w-10 h-10 flex-shrink-0 hover:text-gray-500' />;
-      } else if (skill === 'linux') {
-        return <SiLinux className='w-10 h-10 flex-shrink-0 hover:text-gray-500' />;
-      } else if (skill === 'kubernetes') {
-        return <SiKubernetes className='w-10 h-10 flex-shrink-0 hover:text-gray-500' />;
-      } else if (skill === 'azure') {
-        return <SiMicrosoftazure className='w-10 h-10 flex-shrink-0 hover:text-gray-500' />;
-      }
-    };
-
     return (
       <>
-        <div className='bg-indigo-600'>
+        <div className='bg-primary'>
           <div className='max-w-7xl mx-auto py-16 sm:py-24 px-6'>
             <div className='text-left'>
               <p className='mt-1 text-4xl text-white font-extrabold sm:text-5xl sm:tracking-tight lg:text-6xl'>
                 Certifications
-              </p>
-              <p className='max-w-xl mt-5 text-xl text-white'>
-                Start building for free, then add a site plan to go live. Account plans unlock additional features.
               </p>
             </div>
             <ul className='mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
@@ -287,15 +164,15 @@ export default function ResumePage() {
                   <div className='w-full flex items-center justify-between p-6 space-x-6'>
                     <div className='flex-1 truncate'>
                       <div className='flex items-center space-x-3'>
-                        <h3 className='text-gray-900 text-sm font-medium truncate'>{cert.name}</h3>
-                        <span className='flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full'>
+                        <h3 className='text-gray-900 text-sm font-bold truncate'>{cert.name}</h3>
+                        <span className='flex-shrink-0 inline-block px-2 py-0.5 text-white text-xs font-bold bg-primaryLight rounded-full'>
                           {cert.skill}
                         </span>
                       </div>
                       <p className='mt-1 text-gray-500 text-sm truncate'>{cert.cert_from}</p>
                       <p className='mt-1 text-gray-500 text-sm truncate'>{cert.date}</p>
                     </div>
-                    {getSkillIcon(cert.skill_icon)}
+                    <Icon size='w-10 h-10' skillName={cert.skill_icon} />
                   </div>
                   <div>
                     <div className='-mt-px flex divide-x divide-gray-200'>
@@ -335,13 +212,15 @@ export default function ResumePage() {
           <div className='max-w-7xl mx-auto px-6'>
             <div className='text-left'>
               <p className='mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl'>
-                Skills
+                Highlighted Skills
               </p>
               <p className='max-w-xl mt-5 text-xl text-gray-500'>
-                Start building for free, then add a site plan to go live. Account plans unlock additional features.
+                <a href='/skills' className='text-primaryLight font-medium hover:text-gray-500'>
+                  View all of my relevant skills here.
+                </a>
               </p>
             </div>
-            <SkillSection />
+            <SkillList skillData={skills} />
           </div>
         </div>
       </>
@@ -357,9 +236,6 @@ export default function ResumePage() {
               <p className='mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl'>
                 Experience
               </p>
-              <p className='max-w-xl mt-5 text-xl text-gray-500'>
-                Start building for free, then add a site plan to go live. Account plans unlock additional features.
-              </p>
             </div>
           </div>
         </div>
@@ -369,23 +245,19 @@ export default function ResumePage() {
 
   return (
     <>
-      <Helmet>
-        <title>Resume | Trevor's Portfolio</title>
-      </Helmet>
-      <div className='container mx-auto max-w-7xl'>
-        <Header />
+      <div className='font-sans container mx-auto max-w-7xl'>
+        <Intro />
         <Education />
       </div>
-      <div className='bg-indigo-600'>
+      <div className='font-sans bg-primary'>
         <div className='container mx-auto max-w-7xl'>
           <Certifications />
         </div>
       </div>
-      <div className='container mx-auto max-w-7xl mt-12'>
+      <div className='font-sans container mx-auto max-w-7xl mt-12'>
         <Skills />
         <Experience />
       </div>
-      <Newsletter />
     </>
   );
 }

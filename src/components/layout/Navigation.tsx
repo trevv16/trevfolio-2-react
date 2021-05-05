@@ -11,7 +11,7 @@ export default function Navigation() {
   const currentPage = window.location.pathname;
 
   return (
-    <Disclosure as='nav' className='bg-white shadow'>
+    <Disclosure as='nav' className='font-sans bg-white shadow'>
       {/* eslint-disable max-len */}
       {({ open }) => (
         <>
@@ -20,27 +20,19 @@ export default function Navigation() {
               <div className='flex'>
                 <div className='flex-shrink-0 flex items-center'>
                   <a href='/'>
-                    <img
-                      className='block lg:hidden h-8 w-auto'
-                      src='https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg'
-                      alt='Workflow'
-                    />
-                    <img
-                      className='hidden lg:block h-8 w-auto'
-                      src='https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg'
-                      alt='Workflow'
-                    />
+                    <img className='block lg:hidden h-8 w-auto' src='TN_logo.png' alt='Trevor Njeru logo' />
+                    <img className='hidden lg:block w-28 h-auto' src='TN_logo.png' alt='Trevor Njeru logo' />
                   </a>
                 </div>
                 <div className='hidden sm:ml-6 sm:flex sm:space-x-8'>
-                  {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
+                  {/* Current: "border-primary text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray hover:text-gray-700" */}
                   <a
                     href='/about'
                     className={`${
                       currentPage === '/about'
-                        ? 'border-indigo-500 text-gray-900'
-                        : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                    } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+                        ? 'border-primary text-gray-900 border-b-2'
+                        : 'border-transparent text-gray-500 hover:border-gray hover:text-gray-700'
+                    } inline-flex items-center px-1 pt-1 text-sm font-semibold`}
                   >
                     About
                   </a>
@@ -48,9 +40,9 @@ export default function Navigation() {
                     href='/skills'
                     className={`${
                       currentPage === '/skills'
-                        ? 'border-indigo-500 text-gray-900'
-                        : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                    } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+                        ? 'border-primary text-gray-900 border-b-2'
+                        : 'border-transparent text-gray-500 hover:border-gray hover:text-gray-700'
+                    } inline-flex items-center px-1 pt-1 text-sm font-semibold`}
                   >
                     Skills
                   </a>
@@ -58,29 +50,19 @@ export default function Navigation() {
                     href='/projects'
                     className={`${
                       currentPage === '/projects'
-                        ? 'border-indigo-500 text-gray-900'
-                        : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                    } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+                        ? 'border-primary text-gray-900 border-b-2'
+                        : 'border-transparent text-gray-500 hover:border-gray hover:text-gray-700'
+                    } inline-flex items-center px-1 pt-1 text-sm font-semibold`}
                   >
                     Projects
-                  </a>
-                  <a
-                    href='/resume'
-                    className={`${
-                      currentPage === '/resume'
-                        ? 'border-indigo-500 text-gray-900'
-                        : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                    } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
-                  >
-                    Resume
                   </a>
                   <a
                     href='/contact'
                     className={`${
                       currentPage === '/contact'
-                        ? 'border-indigo-500 text-gray-900'
-                        : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                    } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+                        ? 'border-primary text-gray-900 border-b-2'
+                        : 'border-transparent text-gray-500 hover:border-gray hover:text-gray-700'
+                    } inline-flex items-center px-1 pt-1 text-sm font-semibold`}
                   >
                     Contact
                   </a>
@@ -102,34 +84,44 @@ export default function Navigation() {
 
           <Disclosure.Panel className='sm:hidden'>
             <div className='pt-2 pb-3 space-y-1'>
-              {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
+              {/* Current: "bg-primaryLight border-primary text-primary", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray hover:text-gray-700" */}
               <a
                 href='/about'
-                className='bg-indigo-50 border-indigo-500 text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium'
+                className={`${
+                  currentPage === '/about'
+                    ? 'bg-primaryLight border-primary text-white'
+                    : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray hover:text-gray-700'
+                } block pl-3 pr-4 py-2 border-l-4 text-base font-semibold`}
               >
                 About
               </a>
               <a
                 href='/skills'
-                className='border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium'
+                className={`${
+                  currentPage === '/skills'
+                    ? 'bg-primaryLight border-primary text-white'
+                    : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray hover:text-gray-700'
+                } block pl-3 pr-4 py-2 border-l-4 text-base font-semibold`}
               >
                 Skills
               </a>
               <a
                 href='/projects'
-                className='border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium'
+                className={`${
+                  currentPage === '/projects'
+                    ? 'bg-primaryLight border-primary text-white'
+                    : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray hover:text-gray-700'
+                } block pl-3 pr-4 py-2 border-l-4 text-base font-semibold`}
               >
                 Projects
               </a>
               <a
-                href='/resume'
-                className='border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium'
-              >
-                Resume
-              </a>
-              <a
                 href='/contact'
-                className='border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium'
+                className={`${
+                  currentPage === '/contact'
+                    ? 'bg-primaryLight border-primary text-white'
+                    : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray hover:text-gray-700'
+                } block pl-3 pr-4 py-2 border-l-4 text-base font-semibold`}
               >
                 Contact
               </a>

@@ -1,20 +1,17 @@
-import { Helmet } from 'react-helmet-async';
 import { CameraIcon } from '@heroicons/react/solid';
-import { Newsletter } from '../components/index';
+import { Newsletter, SeoHelmet } from '../components/index';
 
 export default function AboutPage() {
   return (
     <>
-      <Helmet>
-        <title>About | Trevor's Portfolio</title>
-      </Helmet>
+      <SeoHelmet title="About | Trevor's Portfolio" description='' image='' image_alt='Trevor Njeru logo' />
       <div className='overflow-hidden'>
         <div className='relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8'>
           <div className='mt-1 hidden lg:block bg-gray-50 absolute top-0 bottom-0 left-3/4 w-screen' />
           <div className='mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none'>
             <div>
-              <h2 className='text-base text-indigo-600 font-semibold tracking-wide uppercase'>About Me</h2>
-              <h3 className='mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl'>
+              <h2 className='font-sans text-base text-primary font-semibold tracking-wide uppercase'>About Me</h2>
+              <h3 className='font-sans mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl'>
                 Trevor Njeru
               </h3>
             </div>
@@ -56,50 +53,48 @@ export default function AboutPage() {
                   </div>
                   <figcaption className='mt-3 flex text-sm text-gray-500'>
                     <CameraIcon className='flex-none w-5 h-5 text-gray-400' aria-hidden='true' />
-                    <span className='ml-2'>Photograph by Ronnie Kariuki</span>
+                    <span className='font-sans ml-2'>Photograph by Ronnie Kariuki</span>
                   </figcaption>
                 </figure>
               </div>
             </div>
             <div className='mt-8 lg:mt-0'>
               <div className='text-base max-w-prose mx-auto lg:max-w-none'>
-                <p className='text-lg text-gray-500'>
-                  Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque
-                  tristique pellentesque. Blandit amet, sed aenean erat arcu morbi.
+                <p className='font-sans text-lg text-gray-500'>
+                  My Name is Trevor Njeru, I am a self-taught full stack developer and senior Computer Science student
+                  with a concentration in Human-Computer Interaction, and I am both a Kenyan and American citizen.
                 </p>
               </div>
-              <div className='mt-5 prose prose-indigo text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1'>
+              <div className='font-sans text-lg mt-5 prose prose-indigo text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1'>
                 <p>
-                  Sollicitudin tristique eros erat odio sed vitae, consequat turpis elementum. Lorem nibh vel, eget
-                  pretium arcu vitae. Eros eu viverra donec ut volutpat donec laoreet quam urna.
+                  I have lived in North Carolina basically my whole life, but I did experience living and going to
+                  school in Kenya for about 2 years. As a result, I have a focus on learning skills for an international
+                  marketplace.
                 </p>
                 <p>
-                  Bibendum eu nulla feugiat justo, elit adipiscing. Ut tristique sit nisi lorem pulvinar. Urna, laoreet
-                  fusce nibh leo. Dictum et et et sit. Faucibus sed non gravida lectus dignissim imperdiet a.
+                  {
+                    'I am very comfortable with core computer science concepts like logic, data structures & algorithms, security fundamentals, and software architecture.'
+                  }
                 </p>
-                <p>
-                  Dictum magnis risus phasellus vitae quam morbi. Quis lorem lorem arcu, metus, egestas netus cursus.
-                  In.
-                </p>
+                <p>With my full stack skills, I have built projects using:</p>
                 <ul>
-                  <li>Quis elit egestas venenatis mattis dignissim.</li>
-                  <li>Cras cras lobortis vitae vivamus ultricies facilisis tempus.</li>
-                  <li>Orci in sit morbi dignissim metus diam arcu pretium.</li>
+                  <li>Node</li>
+                  <li>Express</li>
+                  <li>React</li>
+                  <li>MongoDB</li>
+                  <li>MySQL</li>
+                  <li>Python</li>
+                  <li>AWS Services</li>
+                  <li>CI/CD</li>
                 </ul>
                 <p>
-                  Rhoncus nisl, libero egestas diam fermentum dui. At quis tincidunt vel ultricies. Vulputate aliquet
-                  velit faucibus semper. Pellentesque in venenatis vestibulum consectetur nibh id. In id ut tempus
-                  egestas. Enim sit aliquam nec, a. Morbi enim fermentum lacus in. Viverra.
+                  As well I have experience working in an Agile environment using dev tools like Git, Github Actions,
+                  AWS, Heroku, and UI skills with Figma, and multiple Adobe CC programs.
                 </p>
-                <h3>How we helped</h3>
+                <h3>Career Goals</h3>
                 <p>
-                  Tincidunt integer commodo, cursus etiam aliquam neque, et. Consectetur pretium in volutpat, diam.
-                  Montes, magna cursus nulla feugiat dignissim id lobortis amet. Laoreet sem est phasellus eu proin
-                  massa, lectus. Diam rutrum posuere donec ultricies non morbi. Mi a platea auctor mi.
-                </p>
-                <p>
-                  Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque
-                  tristique pellentesque. Blandit amet, sed aenean erat arcu morbi.
+                  My career objective is to become a well-sought after software engineer in my field, utilizing my HCI
+                  skills in a software architecture role to make a social impact.
                 </p>
               </div>
             </div>

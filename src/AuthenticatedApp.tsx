@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import {
   HomePage,
   AboutPage,
-  ResumePage,
   ContactPage,
   ProjectsPage,
   ProjectDetailPage,
@@ -38,7 +37,6 @@ export default function AuthenticatedApp() {
             <Route exact path='/projects' component={ProjectsPage} />
             <Route exact path='/about' component={AboutPage} />
             <Route exact path='/contact' component={ContactPage} />
-            <Route exact path='/resume' component={ResumePage} />
             <Route exact path='/' component={HomePage} />
 
             {/* Admin Routes */}
@@ -47,7 +45,7 @@ export default function AuthenticatedApp() {
             {/* Error Pages */}
             <Route exact path='/500' component={Error500} />
             <Route exact path='/404' component={Error404} />
-            <Route component={Error404} />
+            {/* <Route component={Error404} /> */}
           </AppLayout>
         </Switch>
       </Router>

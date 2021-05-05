@@ -8,7 +8,6 @@ import {
   ResetPasswordPage,
   HomePage,
   AboutPage,
-  ResumePage,
   ContactPage,
   ProjectsPage,
   ProjectDetailPage,
@@ -31,8 +30,8 @@ export default function PublicApp() {
   return (
     <div>
       <Router>
-        <Switch>
-          <PublicLayout>
+        <PublicLayout>
+          <Switch>
             {/* Auth Routes */}
             <Route exact path='/signup' component={SignUpPage} />
             <Route exact path='/signin' component={SignInPage} />
@@ -46,14 +45,14 @@ export default function PublicApp() {
             <Route exact path='/projects' component={ProjectsPage} />
             <Route exact path='/about' component={AboutPage} />
             <Route exact path='/contact' component={ContactPage} />
-            <Route exact path='/resume' component={ResumePage} />
             <Route exact path='/' component={HomePage} />
 
             {/* Error Pages */}
             <Route exact path='/500' component={Error500} />
-            <Route exact path='/404' component={Error404} />
-          </PublicLayout>
-        </Switch>
+
+            <Route path='*' component={Error404} />
+          </Switch>
+        </PublicLayout>
       </Router>
     </div>
   );

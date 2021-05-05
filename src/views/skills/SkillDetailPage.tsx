@@ -1,8 +1,7 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import dayjs from 'dayjs';
-import { HiOutlineEye, HiOutlineCode } from 'react-icons/hi';
-import shortid from 'shortid';
+
+import { ProjectList, SeoHelmet } from '../../components/index';
 
 type SkillType = {
   _id: string;
@@ -12,7 +11,7 @@ type SkillType = {
   thumbnail: string;
 };
 
-export default function SkillDetailPage() {
+export default function SkillDetailPage(props: any) {
   const skill: SkillType = {
     _id: 'k24l1fsgd323mvb89s',
     category: 'Front-End',
@@ -52,56 +51,18 @@ export default function SkillDetailPage() {
     }
   ];
 
-  const ProjectCard = ({ project }: any) => {
-    return (
-      <div className='my-12 space-y-4'>
-        <a href={`/projects/${project._id}`}>
-          <div className='aspect-w-3 aspect-h-2'>
-            <img className='object-cover shadow-lg rounded-lg' src={project.thumbnail} alt='' />
-          </div>
-        </a>
-
-        <div className='space-y-2'>
-          <a href={`/projects/${project._id}`}>
-            <div className='text-lg leading-6 font-medium space-y-1'>
-              <h3 className='text-3xl truncate'>{project.title}</h3>
-              <p className='text-sm text-indigo-600'>{project.published}</p>
-            </div>
-          </a>
-          <ul className='flex space-x-5'>
-            <li>
-              <a href={project.github_url} rel='noopener noreferrer' className='text-gray-400 hover:text-gray-500'>
-                <span className='sr-only'>Github</span>
-                <HiOutlineCode className='h-6 w-6' />
-              </a>
-            </li>
-            <li>
-              <a href={project.demo_url} rel='noopener noreferrer' className='text-gray-400 hover:text-gray-500'>
-                <span className='sr-only'>Demo</span>
-                <HiOutlineEye className='h-6 w-6' />
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    );
-  };
-
   const ProjectsSection = () => {
     return (
       <div className='mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-14'>
         <div className='space-y-12'>
           <div className='space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none'>
-            <h2 className='text-3xl font-extrabold tracking-tight sm:text-4xl'>Projects</h2>
-            <p className='text-xl text-gray-500'>View the projects I have completed relevant to this skill.</p>
+            <h2 className='font-sans text-3xl font-extrabold tracking-tight sm:text-4xl'>Projects</h2>
+            <p className='font-sans text-xl text-gray-500'>
+              View the projects I have completed relevant to this skill.
+            </p>
           </div>
-          <ul className='space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8'>
-            {projects.map((project) => (
-              <li key={shortid.generate()}>
-                <ProjectCard project={project} />
-              </li>
-            ))}
-          </ul>
+
+          <ProjectList data={projects} />
         </div>
       </div>
     );
@@ -111,20 +72,18 @@ export default function SkillDetailPage() {
     <div className='max-w-7xl mx-auto pt-8 px-4 sm:py-24 sm:px-6 lg:px-8'>
       <img className='w-52 h-52 mb-8 flex-shrink-0 mx-auto bg-black rounded-full' src={skill.thumbnail} alt='' />
       <div className='text-center'>
-        <h2 className='text-base font-semibold text-indigo-600 tracking-wide uppercase'>{skill.category}</h2>
-        <p className='mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl'>
+        <h2 className='font-sans text-base font-semibold text-primary tracking-wide uppercase'>{skill.category}</h2>
+        <p className='font-sans mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl'>
           {skill.name}
         </p>
-        <p className='max-w-xl mt-5 mx-auto text-xl text-gray-500'>{skill.description}</p>
+        <p className='font-sans max-w-xl mt-5 mx-auto text-xl text-gray-500'>{skill.description}</p>
       </div>
     </div>
   );
 
   return (
     <>
-      <Helmet>
-        <title>{`${skill.name} | Trevor's Portfolio`}</title>
-      </Helmet>
+      <SeoHelmet title={`${skill.name} | Trevor's Portfolio`} description='' image='' image_alt='Trevor Njeru logo' />
       <div>
         <Header skill={skill} />
         <ProjectsSection />
