@@ -63,8 +63,8 @@ export default function SkillsPage() {
             <div className='space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none'>
               <h2 className='font-sans text-3xl font-extrabold tracking-tight sm:text-4xl'>My Skills</h2>
               <p className='font-sans text-xl text-gray-500'>
-                Odio nisi, lectus dis nulla. Ultrices maecenas vitae rutrum dolor ultricies donec risus sodales. Tempus
-                quis et.
+                Here are some of my software development skills that I have highlighted as my strongest and personal
+                favorites.{' '}
               </p>
             </div>
           </div>

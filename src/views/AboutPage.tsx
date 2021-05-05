@@ -61,42 +61,40 @@ export default function AboutPage() {
             <div className='mt-8 lg:mt-0'>
               <div className='text-base max-w-prose mx-auto lg:max-w-none'>
                 <p className='font-sans text-lg text-gray-500'>
-                  Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque
-                  tristique pellentesque. Blandit amet, sed aenean erat arcu morbi.
+                  My Name is Trevor Njeru, I am a self-taught full stack developer and senior Computer Science student
+                  with a concentration in Human-Computer Interaction, and I am both a Kenyan and American citizen.
                 </p>
               </div>
-              <div className='font-sans mt-5 prose prose-indigo text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1'>
+              <div className='font-sans text-lg mt-5 prose prose-indigo text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1'>
                 <p>
-                  Sollicitudin tristique eros erat odio sed vitae, consequat turpis elementum. Lorem nibh vel, eget
-                  pretium arcu vitae. Eros eu viverra donec ut volutpat donec laoreet quam urna.
+                  I have lived in North Carolina basically my whole life, but I did experience living and going to
+                  school in Kenya for about 2 years. As a result, I have a focus on learning skills for an international
+                  marketplace.
                 </p>
                 <p>
-                  Bibendum eu nulla feugiat justo, elit adipiscing. Ut tristique sit nisi lorem pulvinar. Urna, laoreet
-                  fusce nibh leo. Dictum et et et sit. Faucibus sed non gravida lectus dignissim imperdiet a.
+                  {
+                    'I am very comfortable with core computer science concepts like logic, data structures & algorithms, security fundamentals, and software architecture.'
+                  }
                 </p>
-                <p>
-                  Dictum magnis risus phasellus vitae quam morbi. Quis lorem lorem arcu, metus, egestas netus cursus.
-                  In.
-                </p>
+                <p>With my full stack skills, I have built projects using:</p>
                 <ul>
-                  <li>Quis elit egestas venenatis mattis dignissim.</li>
-                  <li>Cras cras lobortis vitae vivamus ultricies facilisis tempus.</li>
-                  <li>Orci in sit morbi dignissim metus diam arcu pretium.</li>
+                  <li>Node</li>
+                  <li>Express</li>
+                  <li>React</li>
+                  <li>MongoDB</li>
+                  <li>MySQL</li>
+                  <li>Python</li>
+                  <li>AWS Services</li>
+                  <li>CI/CD</li>
                 </ul>
                 <p>
-                  Rhoncus nisl, libero egestas diam fermentum dui. At quis tincidunt vel ultricies. Vulputate aliquet
-                  velit faucibus semper. Pellentesque in venenatis vestibulum consectetur nibh id. In id ut tempus
-                  egestas. Enim sit aliquam nec, a. Morbi enim fermentum lacus in. Viverra.
+                  As well I have experience working in an Agile environment using dev tools like Git, Github Actions,
+                  AWS, Heroku, and UI skills with Figma, and multiple Adobe CC programs.
                 </p>
-                <h3>How we helped</h3>
+                <h3>Career Goals</h3>
                 <p>
-                  Tincidunt integer commodo, cursus etiam aliquam neque, et. Consectetur pretium in volutpat, diam.
-                  Montes, magna cursus nulla feugiat dignissim id lobortis amet. Laoreet sem est phasellus eu proin
-                  massa, lectus. Diam rutrum posuere donec ultricies non morbi. Mi a platea auctor mi.
-                </p>
-                <p>
-                  Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque
-                  tristique pellentesque. Blandit amet, sed aenean erat arcu morbi.
+                  My career objective is to become a well-sought after software engineer in my field, utilizing my HCI
+                  skills in a software architecture role to make a social impact.
                 </p>
               </div>
             </div>

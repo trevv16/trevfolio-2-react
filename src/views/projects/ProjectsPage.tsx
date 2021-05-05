@@ -43,8 +43,7 @@ export default function ProjectsPage() {
           <div className='space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none'>
             <h2 className='font-sans text-3xl font-extrabold tracking-tight sm:text-4xl'>My Projects</h2>
             <p className='font-sans text-xl text-gray-500'>
-              Odio nisi, lectus dis nulla. Ultrices maecenas vitae rutrum dolor ultricies donec risus sodales. Tempus
-              quis et.
+              Here are some of the projects that represent the skills I have with software development and design.
             </p>
           </div>
           <ProjectList data={projects} />
