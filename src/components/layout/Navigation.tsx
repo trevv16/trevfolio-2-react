@@ -30,9 +30,9 @@ export default function Navigation() {
                     href='/about'
                     className={`${
                       currentPage === '/about'
-                        ? 'border-primary text-gray-900'
+                        ? 'border-primary text-gray-900 border-b-2'
                         : 'border-transparent text-gray-500 hover:border-gray hover:text-gray-700'
-                    } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-semibold`}
+                    } inline-flex items-center px-1 pt-1 text-sm font-semibold`}
                   >
                     About
                   </a>
@@ -40,9 +40,9 @@ export default function Navigation() {
                     href='/skills'
                     className={`${
                       currentPage === '/skills'
-                        ? 'border-primary text-gray-900'
+                        ? 'border-primary text-gray-900 border-b-2'
                         : 'border-transparent text-gray-500 hover:border-gray hover:text-gray-700'
-                    } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-semibold`}
+                    } inline-flex items-center px-1 pt-1 text-sm font-semibold`}
                   >
                     Skills
                   </a>
@@ -50,9 +50,9 @@ export default function Navigation() {
                     href='/projects'
                     className={`${
                       currentPage === '/projects'
-                        ? 'border-primary text-gray-900'
+                        ? 'border-primary text-gray-900 border-b-2'
                         : 'border-transparent text-gray-500 hover:border-gray hover:text-gray-700'
-                    } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-semibold`}
+                    } inline-flex items-center px-1 pt-1 text-sm font-semibold`}
                   >
                     Projects
                   </a>
@@ -60,9 +60,9 @@ export default function Navigation() {
                     href='/contact'
                     className={`${
                       currentPage === '/contact'
-                        ? 'border-primary text-gray-900'
+                        ? 'border-primary text-gray-900 border-b-2'
                         : 'border-transparent text-gray-500 hover:border-gray hover:text-gray-700'
-                    } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-semibold`}
+                    } inline-flex items-center px-1 pt-1 text-sm font-semibold`}
                   >
                     Contact
                   </a>
