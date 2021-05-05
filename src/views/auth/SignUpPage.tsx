@@ -33,7 +33,7 @@ export default function SignUpPage() {
                     type='text'
                     autoComplete='firstName'
                     required
-                    className='appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'
+                    className='appearance-none block w-full px-3 py-2 border border-gray rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-primary sm:text-sm'
                   />
                 </div>
               </div>
@@ -49,7 +49,7 @@ export default function SignUpPage() {
                     type='text'
                     autoComplete='lastName'
                     required
-                    className='appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'
+                    className='appearance-none block w-full px-3 py-2 border border-gray rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-primary sm:text-sm'
                   />
                 </div>
               </div>
@@ -65,7 +65,7 @@ export default function SignUpPage() {
                     type='email'
                     autoComplete='email'
                     required
-                    className='appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'
+                    className='appearance-none block w-full px-3 py-2 border border-gray rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-primary sm:text-sm'
                   />
                 </div>
               </div>
@@ -81,7 +81,7 @@ export default function SignUpPage() {
                     type='password'
                     autoComplete='current-password'
                     required
-                    className='appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'
+                    className='appearance-none block w-full px-3 py-2 border border-gray rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-primary sm:text-sm'
                   />
                 </div>
               </div>
@@ -99,7 +99,7 @@ export default function SignUpPage() {
             <div className='mt-6'>
               <div className='relative'>
                 <div className='absolute inset-0 flex items-center'>
-                  <div className='w-full border-t border-gray-300'></div>
+                  <div className='w-full border-t border-gray'></div>
                 </div>
                 <div className='relative flex justify-center text-sm'>
                   <span className='px-2 bg-white text-gray-500'>Or continue with</span>
@@ -110,7 +110,7 @@ export default function SignUpPage() {
                 <div>
                   <a
                     href='/'
-                    className='w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50'
+                    className='w-full inline-flex justify-center py-2 px-4 border border-gray rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50'
                   >
                     <span className='sr-only'>Sign in with Google</span>
                     <svg className='w-5 h-5' fill='currentColor' viewBox='0 0 56.6934 56.6934' aria-hidden='true'>
@@ -126,7 +126,7 @@ export default function SignUpPage() {
                 <div>
                   <a
                     href='/'
-                    className='w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50'
+                    className='w-full inline-flex justify-center py-2 px-4 border border-gray rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50'
                   >
                     <span className='sr-only'>Sign in with Facebook</span>
                     <svg className='w-5 h-5' fill='currentColor' viewBox='0 0 20 20' aria-hidden='true'>
@@ -142,7 +142,7 @@ export default function SignUpPage() {
                 <div>
                   <a
                     href='/'
-                    className='w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50'
+                    className='w-full inline-flex justify-center py-2 px-4 border border-gray rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50'
                   >
                     <span className='sr-only'>Sign in with Twitter</span>
                     <svg className='w-5 h-5' fill='currentColor' viewBox='0 0 20 20' aria-hidden='true'>

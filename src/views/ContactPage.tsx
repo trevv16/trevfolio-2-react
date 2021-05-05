@@ -147,7 +147,7 @@ export default function ContactPage() {
                     name='first_name'
                     id='first_name'
                     autoComplete='given-name'
-                    className='py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md'
+                    className='py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-primary border-gray rounded-md'
                   />
                 </div>
               </div>
@@ -162,7 +162,7 @@ export default function ContactPage() {
                     name='last_name'
                     id='last_name'
                     autoComplete='family-name'
-                    className='py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md'
+                    className='py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-primary border-gray rounded-md'
                   />
                 </div>
               </div>
@@ -177,7 +177,7 @@ export default function ContactPage() {
                     name='email'
                     type='email'
                     autoComplete='email'
-                    className='py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md'
+                    className='py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-primary border-gray rounded-md'
                   />
                 </div>
               </div>
@@ -191,7 +191,7 @@ export default function ContactPage() {
                     id='message'
                     name='message'
                     rows={4}
-                    className='py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md'
+                    className='py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-primary border-gray rounded-md'
                     defaultValue={''}
                   />
                 </div>

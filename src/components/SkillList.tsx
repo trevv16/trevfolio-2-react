@@ -75,7 +75,7 @@ export default function SkillList(props: any) {
             <div key={shortid.generate()}>
               <div className='my-12 relative'>
                 <div className='absolute inset-0 flex items-center' aria-hidden='true'>
-                  <div className='w-full border-t border-gray-300' />
+                  <div className='w-full border-t border-gray' />
                 </div>
                 <div className='relative flex justify-start'>
                   <span className='font-sans pr-3 bg-white text-lg font-medium text-primary'>{category}</span>
