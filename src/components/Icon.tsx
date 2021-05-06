@@ -26,7 +26,7 @@ export default function HomePage(props: any) {
   useEffect(() => {
     setSkill(props.skillName);
     setSize(props.size);
-  }, [props.skillName]);
+  }, [props.skillName, props.size]);
 
   const getSkillIcon = (skill: string) => {
     switch (skill) {

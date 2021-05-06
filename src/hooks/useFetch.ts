@@ -19,7 +19,7 @@ const useFetch = (url: string) => {
     };
 
     fetchData();
-  }, []);
+  }, [url]);
 
   return { response, error, isLoading };
 };
