@@ -1,39 +1,17 @@
-import React from 'react';
-import { Helmet } from 'react-helmet-async';
-import dayjs from 'dayjs';
+import React, { useState, useEffect } from 'react';
 
-import { ProjectList, SeoHelmet } from '../../components/index';
+import useFetch from '../../hooks/useFetch';
+import { Alert, Loading, ProjectList, SeoHelmet } from '../../components/index';
 
 export default function ProjectsPage() {
-  const projects = [
-    {
-      _id: 'ajk324n2krw6f7ade',
-      title: 'Trevfolio',
-      published: dayjs('2019-01-25').format('MMM D, YYYY'),
-      thumbnail:
-        'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-      github_url: 'https://github.com/trevva16/trevfolio-2-node',
-      demo_url: 'https://trevornjeru.com'
-    },
-    {
-      _id: 'ajk324n2krw6f7ade',
-      title: 'Trevfolio',
-      published: dayjs('2019-01-25').format('MMM D, YYYY'),
-      thumbnail:
-        'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-      github_url: 'https://github.com/trevva16/trevfolio-2-node',
-      demo_url: 'https://trevornjeru.com'
-    },
-    {
-      _id: 'ajk324n2krw6f7ade',
-      title: 'Trevfolio',
-      published: dayjs('2019-01-25').format('MMM D, YYYY'),
-      thumbnail:
-        'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-      github_url: 'https://github.com/trevva16/trevfolio-2-node',
-      demo_url: 'https://trevornjeru.com'
+  const [projects, setProjects] = useState<any>([]);
+  const { response, error, isLoading } = useFetch('api/v1/projects');
+
+  useEffect(() => {
+    if (response !== null) {
+      setProjects(response.data.data);
     }
-  ];
+  }, [response, error, isLoading]);
 
   return (
     <>
@@ -46,7 +24,14 @@ export default function ProjectsPage() {
               Here are some of the projects that represent the skills I have with software development and design.
             </p>
           </div>
-          <ProjectList data={projects} />
+          {error !== null && <Alert status='error'>{error.message}</Alert>}
+          {isLoading ? (
+            <div className='transform translate-x-1/3'>
+              <Loading />
+            </div>
+          ) : (
+            <ProjectList data={projects} />
+          )}
         </div>
       </div>
     </>
