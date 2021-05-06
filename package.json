@@ -1,5 +1,5 @@
 {
-  "name": "trevfolio-2-node",
+  "name": "trevfolio-2-react",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
@@ -82,6 +82,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.23.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^5.2.0",
     "lint-staged": "^10.5.4",
     "postcss": "^7.0.35",
@@ -90,6 +91,6 @@
   },
   "engines": {
     "node": "15.11.0",
-    "npm": "7.11.2"
+    "npm": "7.10.0"
   }
 }

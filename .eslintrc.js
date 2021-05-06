@@ -24,6 +24,8 @@ module.exports = {
     'plugin:prettier/recommended'
   ],
   rules: {
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
     quotes: [
       'error',
       'single',
@@ -57,5 +59,5 @@ module.exports = {
       }
     ]
   },
-  plugins: ['prettier']
+  plugins: ['prettier', 'react-hooks']
 };
