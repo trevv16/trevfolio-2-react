@@ -117,7 +117,9 @@ export default function ProjectDetailPage(props: any) {
             {project && project !== {} && <Header />}
             <div className='mx-auto max-w-7xl px-4 sm:py-8 sm:px-6 lg:px-8'>
               <div className='mt-4'>
-                <h1 className='font-sans text-center text-3xl font-extrabold tracking-tight sm:text-4xl'>Skills</h1>
+                <h1 className='font-sans text-center text-3xl font-extrabold tracking-tight sm:text-4xl'>
+                  Skills Used
+                </h1>
               </div>
               {skills !== [] && <SkillList skillData={skills} />}
             </div>
