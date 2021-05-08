@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Alert(props: any) {
   const SuccessAlert = () => (
-    <div className='rounded-md bg-success p-4'>
+    <div className='my-16 rounded-md bg-success p-4'>
       <div className='flex'>
         <div className='flex-shrink-0'>
           {/* Heroicon name: solid/check-circle */}
@@ -52,7 +52,7 @@ export default function Alert(props: any) {
   );
 
   const WarnAlert = () => (
-    <div className='rounded-md bg-warningDark p-4'>
+    <div className='my-16 rounded-md bg-warningDark p-4'>
       <div className='flex'>
         <div className='flex-shrink-0'>
           {/* Heroicon name: solid/check-circle */}
@@ -102,7 +102,7 @@ export default function Alert(props: any) {
   );
 
   const ErrorAlert = () => (
-    <div className='rounded-md bg-danger p-4'>
+    <div className='my-16 rounded-md bg-danger p-4'>
       <div className='flex'>
         <div className='flex-shrink-0'>
           {/* Heroicon name: solid/check-circle */}
