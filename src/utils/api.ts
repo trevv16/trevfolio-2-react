@@ -1,6 +1,5 @@
 import axios from 'axios';
 import Auth from '../Auth';
-import { SERVER_BASE_URL } from '../Config';
 
 let API = '';
 
