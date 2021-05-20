@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import dayjs from 'dayjs';
 import { HiOutlineEye, HiOutlineCode } from 'react-icons/hi';
 
-import { SkillList, SeoHelmet } from '../../components/index';
+import useFetch from '../../hooks/useFetch';
+import { Alert, Loading, SkillList, SeoHelmet } from '../../components/index';
 
 type SkillType = {
   _id: string;
@@ -12,7 +13,9 @@ type SkillType = {
   thumbnail: string;
 };
 
-export default function ProjectDetailPage() {
+export default function ProjectDetailPage(props: any) {
+  const projectID = props.match.params.projectID;
+  const [project, setProject] = useState<any>({});
   const skills: SkillType[] = [
     {
       _id: 'k24l1fsgd323mvb89s',
@@ -55,53 +58,14 @@ export default function ProjectDetailPage() {
         'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
     }
   ];
-  const project = {
-    _id: 'ajk324n2krw6f7ade',
-    title: 'Trevfolio',
-    description: 'Start building for free, then add a site plan to go live. Account plans unlock additional features.',
-    published: dayjs('2019-01-25').format('MMM D, YYYY'),
-    thumbnail:
-      'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-    github_url: 'https://github.com/trevva16/trevfolio-2-node',
-    demo_url: 'https://trevornjeru.com',
-    skills: [
-      {
-        _id: 'k24l1fsgd323mvb89s',
-        category: 'Front-End',
-        name: 'React',
-        thumbnail:
-          'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
-      },
-      {
-        _id: 'k24l1dfoadfwvb89s',
-        category: 'Back-End',
-        name: 'Node',
-        thumbnail:
-          'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
-      },
-      {
-        _id: 'k24l1fsgdsab3bvb89s',
-        category: 'Front-End',
-        name: 'Typescript',
-        thumbnail:
-          'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
-      },
-      {
-        _id: 'k24af2m2e2f423bvbafd',
-        category: 'Back-End',
-        name: 'Typescript',
-        thumbnail:
-          'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
-      },
-      {
-        _id: 'l2nfada7a5j7l8n42',
-        category: 'Deployment',
-        name: 'AWS',
-        thumbnail:
-          'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
-      }
-    ]
-  };
+
+  const { response, error, isLoading } = useFetch(`api/v1/projects/${projectID}`);
+
+  useEffect(() => {
+    if (response !== null) {
+      setProject(response.data.data[0]);
+    }
+  }, [response, error, isLoading]);
 
   const Header = () => (
     <div className='max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8'>
@@ -143,13 +107,24 @@ export default function ProjectDetailPage() {
         image_alt='Trevor Njeru logo'
       />
       <div className='container mx-auto'>
-        <Header />
-        <div className='mx-auto max-w-7xl px-4 sm:py-8 sm:px-6 lg:px-8'>
-          <div className='mt-4'>
-            <h1 className='font-sans text-center text-4xl font-bold'>Skills</h1>
+        {error !== null && <Alert status='error'>{error.message}</Alert>}
+        {isLoading ? (
+          <div className='my-12 transform translate-x-1/3'>
+            <Loading />
           </div>
-          <SkillList skillData={skills} />
-        </div>
+        ) : (
+          <>
+            {project && project !== {} && <Header />}
+            <div className='mx-auto max-w-7xl px-4 sm:py-8 sm:px-6 lg:px-8'>
+              <div className='mt-4'>
+                <h1 className='font-sans text-center text-3xl font-extrabold tracking-tight sm:text-4xl'>
+                  Skills Used
+                </h1>
+              </div>
+              {skills !== [] && <SkillList skillData={skills} />}
+            </div>
+          </>
+        )}
       </div>
     </>
   );

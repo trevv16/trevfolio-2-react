@@ -1,7 +1,14 @@
 import axios from 'axios';
 import Auth from '../Auth';
+import { SERVER_BASE_URL } from '../Config';
 
-const API = `${process.env.REACT_APP_BACKEND_HOST}`;
+let API = '';
+
+if (process.env.NODE_ENV === 'production') {
+  API = `${process.env.REACT_APP_PROD_SERVER}`;
+} else {
+  API = `${process.env.REACT_APP_DEV_SERVER}`;
+}
 
 function headers() {
   const token = Auth.getToken();

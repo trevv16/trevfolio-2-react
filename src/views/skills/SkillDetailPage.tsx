@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import dayjs from 'dayjs';
 
-import { ProjectList, SeoHelmet } from '../../components/index';
+import useFetch from '../../hooks/useFetch';
+import { Alert, Loading, ProjectList, SeoHelmet, Icon } from '../../components/index';
 
 type SkillType = {
   _id: string;
@@ -12,14 +13,15 @@ type SkillType = {
 };
 
 export default function SkillDetailPage(props: any) {
-  const skill: SkillType = {
-    _id: 'k24l1fsgd323mvb89s',
-    category: 'Front-End',
-    name: 'React',
-    description: 'Skill Description',
-    thumbnail:
-      'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
-  };
+  const skillID = props.match.params.skillID;
+  const [skill, setSkill] = useState<any>({});
+  const { response, error, isLoading } = useFetch(`api/v1/skills/${skillID}`);
+
+  useEffect(() => {
+    if (response !== null) {
+      setSkill(response.data.data[0]);
+    }
+  }, [response, error, isLoading]);
 
   const projects = [
     {
@@ -70,7 +72,7 @@ export default function SkillDetailPage(props: any) {
 
   const Header = ({ skill }: any) => (
     <div className='max-w-7xl mx-auto pt-8 px-4 sm:py-24 sm:px-6 lg:px-8'>
-      <img className='w-52 h-52 mb-8 flex-shrink-0 mx-auto bg-black rounded-full' src={skill.thumbnail} alt='' />
+      <Icon size='w-52 h-52 mb-8 mx-auto' skillName={skill.name || ''} />
       <div className='text-center'>
         <h2 className='font-sans text-base font-semibold text-primary tracking-wide uppercase'>{skill.category}</h2>
         <p className='font-sans mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl'>
@@ -83,10 +85,24 @@ export default function SkillDetailPage(props: any) {
 
   return (
     <>
-      <SeoHelmet title={`${skill.name} | Trevor's Portfolio`} description='' image='' image_alt='Trevor Njeru logo' />
+      <SeoHelmet
+        title={`${skill.name || 'Skill'} | Trevor's Portfolio`}
+        description=''
+        image=''
+        image_alt='Trevor Njeru logo'
+      />
       <div>
-        <Header skill={skill} />
-        <ProjectsSection />
+        {error !== null && <Alert status='error'>{error.message}</Alert>}
+        {isLoading ? (
+          <div className='transform translate-x-1/3'>
+            <Loading />
+          </div>
+        ) : (
+          <>
+            {skill && skill !== {} && <Header skill={skill} />}
+            {projects !== [] && <ProjectsSection />}
+          </>
+        )}
       </div>
     </>
   );

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-import { SkillList, SeoHelmet } from '../../components/index';
+import useFetch from '../../hooks/useFetch';
+import { Alert, Loading, SkillList, SeoHelmet } from '../../components/index';
 
 type SkillType = {
   _id: string;
@@ -11,63 +12,21 @@ type SkillType = {
 };
 
 export default function SkillsPage() {
-  const skills: SkillType[] = [
-    {
-      _id: 'k24l1fsgd323mvb89s',
-      category: 'Front-End',
-      name: 'React',
-      description: '',
-      thumbnail:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
-    },
-    {
-      _id: 'k24l1dfoadfwvb89s',
-      category: 'Back-End',
-      name: 'Node',
-      description: '',
-      thumbnail:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
-    },
-    {
-      _id: 'k24l1fsgdsab3bvb89s',
-      category: 'Front-End',
-      name: 'Typescript',
-      description: '',
-      thumbnail:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
-    },
-    {
-      _id: 'k24af2m2e2f423bvbafd',
-      category: 'Back-End',
-      name: 'Typescript',
-      description: '',
-      thumbnail:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
-    },
-    {
-      _id: 'l2nfada7a5j7l8n42',
-      category: 'Deployment',
-      name: 'AWS',
-      description: '',
-      thumbnail:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
-    },
-    {
-      _id: 'afgd23lnds8jmn42',
-      category: 'Deployment',
-      name: 'Docker',
-      description: '',
-      thumbnail:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
+  const [skills, setSkills] = useState<SkillType[]>([]);
+  const { response, error, isLoading } = useFetch('api/v1/skills');
+
+  useEffect(() => {
+    if (response && response !== null) {
+      setSkills(response.data.data);
     }
-  ];
+  }, [response, error, isLoading]);
 
   return (
     <>
       <SeoHelmet title="Skills | Trevor's Portfolio" description='' image='' image_alt='Trevor Njeru logo' />
       <div className='container mx-auto'>
         <div className='mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24'>
-          <div className='space-y-12'>
+          <div className='mb-24 space-y-12'>
             <div className='space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none'>
               <h2 className='font-sans text-3xl font-extrabold tracking-tight sm:text-4xl'>My Skills</h2>
               <p className='font-sans text-xl text-gray-500'>
@@ -76,7 +35,16 @@ export default function SkillsPage() {
               </p>
             </div>
           </div>
-          <SkillList skillData={skills} />
+          {error !== null && <Alert status='error'>{error.message}</Alert>}
+          {isLoading ? (
+            <div className='transform translate-x-1/3'>
+              <Loading />
+            </div>
+          ) : skills ? (
+            <SkillList skillData={skills} />
+          ) : (
+            <p className='font-sans text-2xl text-center text-gray-500'>Unavailable</p>
+          )}
         </div>
       </div>
     </>

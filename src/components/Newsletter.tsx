@@ -2,31 +2,43 @@ import React, { useState } from 'react';
 import api from '../utils/api';
 import { useFormik } from 'formik';
 
+import { Alert } from './index';
+
+type StatusType = {
+  status: string;
+  message: string;
+};
+
 export default function Newsletter(props: any) {
+  const [statusRes, setStatusRes] = useState<StatusType | null>(null);
+
+  const postData = async (data: any) => {
+    api
+      .post('api/v1/subscribers', data)
+      .then((res) => {
+        const status = res.data.success;
+        if (status === true) {
+          setStatusRes({
+            status: 'success',
+            message: 'Subscribed!'
+          });
+        }
+      })
+      .catch(() => {
+        setStatusRes({
+          status: 'error',
+          message: 'Sorry, we were un able to add you, please try again later.'
+        });
+      });
+  };
+
   const validate = (values: any) => {
     const errors: any = {};
-    if (!values.first_name) {
-      errors.first_name = 'Required';
-    } else if (values.first_name.length > 15) {
-      errors.first_name = 'Must be 15 characters or less';
-    }
-
-    if (!values.last_name) {
-      errors.last_name = 'Required';
-    } else if (values.last_name.length > 20) {
-      errors.last_name = 'Must be 20 characters or less';
-    }
 
     if (!values.email) {
       errors.email = 'Required';
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
       errors.email = 'Invalid email address';
-    }
-
-    if (!values.message) {
-      errors.message = 'Required';
-    } else if (values.message.length > 240) {
-      errors.message = 'Must be 240 characters or less';
     }
 
     return errors;
@@ -38,30 +50,19 @@ export default function Newsletter(props: any) {
     },
     validate,
     onSubmit: (values) => {
-      const subscriber = {
-        email: values.email.trim(),
-        main_newsletter: true
-      };
-
-      api
-        .post('v1/subscribers', subscriber)
-        .then((response) => {
-          formik.resetForm();
-        })
-        .catch((error) => {
-          if (error.response) {
-            console.error(error.response.data);
-            console.error(error.response.status);
-            console.error(error.response.headers);
-          }
-        });
+      postData(values);
+      formik.resetForm();
+      setTimeout(function () {
+        setStatusRes(null);
+      }, 4000);
     }
   });
 
   return (
     <>
       <div className='max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:py-16 lg:px-8'>
-        <div className='px-6 py-6 bg-primary rounded-lg md:py-12 md:px-12 lg:py-16 lg:px-16 xl:flex xl:items-center'>
+        {statusRes !== null && <Alert status={statusRes.status}>{statusRes.message}</Alert>}
+        <div className='mt-4 px-6 py-6 bg-primary rounded-lg md:py-12 md:px-12 lg:py-16 lg:px-16 xl:flex xl:items-center'>
           <div className='font-sans xl:w-0 xl:flex-1'>
             <h2 className='text-2xl font-extrabold tracking-tight text-white sm:text-3xl'>
               Want project news and updates?
@@ -71,16 +72,17 @@ export default function Newsletter(props: any) {
             </p>
           </div>
           <div className='mt-8 sm:w-full sm:max-w-md xl:mt-0 xl:ml-8'>
-            <form className='font-sans sm:flex'>
+            <form onSubmit={formik.handleSubmit} className='font-sans sm:flex'>
               <label htmlFor='emailAddress' className='sr-only'>
                 Email address
               </label>
-              {formik.errors.email ? <div>{formik.errors.email}</div> : null}
               <input
-                id='emailAddress'
-                name='emailAddress'
+                id='email'
+                name='email'
                 type='email'
                 autoComplete='email'
+                onChange={formik.handleChange}
+                value={formik.values.email}
                 required
                 className='w-full border-white px-5 py-3 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white rounded-md'
                 placeholder='Enter your email'

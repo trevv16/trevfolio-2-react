@@ -32,7 +32,7 @@ export default function SkillList(props: any) {
     const skillList = getSkillCategories(props.skillData);
 
     setSkillCategories(skillList);
-  }, []);
+  }, [props.skillData]);
 
   const SkillCards = ({ categoryName }: any) => {
     const skillList = props.skillData.filter((skill: SkillType) => {
