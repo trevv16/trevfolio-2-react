@@ -22,7 +22,6 @@ module.exports = {
     'plugin:import/typescript',
     'plugin:prettier/recommended',
     'plugin:jsx-a11y/recommended',
-    'plugin:flowtype/recommended',
     'plugin:jest/style',
     'react-app'
   ],
@@ -62,5 +61,5 @@ module.exports = {
       }
     ]
   },
-  plugins: ['prettier', 'jsx-a11y', 'flowtype', 'jest', 'testing-library', 'react-hooks']
+  plugins: ['prettier', 'jsx-a11y', 'jest', 'testing-library', 'react-hooks']
 };
