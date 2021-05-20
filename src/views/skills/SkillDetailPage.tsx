@@ -3,18 +3,11 @@ import dayjs from 'dayjs';
 
 import useFetch from '../../hooks/useFetch';
 import { Alert, Loading, ProjectList, SeoHelmet, Icon } from '../../components/index';
-
-type SkillType = {
-  _id: string;
-  category: string;
-  name: string;
-  description: string;
-  thumbnail: string;
-};
+import { SkillType } from '../../global';
 
 export default function SkillDetailPage(props: any) {
   const skillID = props.match.params.skillID;
-  const [skill, setSkill] = useState<any>({});
+  const [skill, setSkill] = useState<SkillType | null>(null);
   const { response, error, isLoading } = useFetch(`api/v1/skills/${skillID}`);
 
   useEffect(() => {

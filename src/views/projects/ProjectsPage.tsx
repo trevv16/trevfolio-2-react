@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 
 import useFetch from '../../hooks/useFetch';
 import { Alert, Loading, ProjectList, SeoHelmet } from '../../components/index';
+import { ProjectType } from '../../global';
 
 export default function ProjectsPage() {
-  const [projects, setProjects] = useState<any>([]);
+  const [projects, setProjects] = useState<ProjectType[] | null>(null);
   const { response, error, isLoading } = useFetch('api/v1/projects');
 
   useEffect(() => {

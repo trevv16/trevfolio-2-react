@@ -2,14 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import useFetch from '../../hooks/useFetch';
 import { Alert, Loading, SkillList, SeoHelmet } from '../../components/index';
-
-type SkillType = {
-  _id: string;
-  category: string;
-  name: string;
-  description: string;
-  thumbnail: string;
-};
+import { SkillType } from '../../global';
 
 export default function SkillsPage() {
   const [skills, setSkills] = useState<SkillType[] | null>([]);

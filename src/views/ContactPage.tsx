@@ -2,18 +2,7 @@ import { useState, useEffect } from 'react';
 import { useFormik } from 'formik';
 import api from '../utils/api';
 import { Alert, Loading, SeoHelmet } from '../components/index';
-
-type ContactMessageType = {
-  first_name: string;
-  last_name: string;
-  email: string;
-  message: string;
-};
-
-type StatusType = {
-  status: string;
-  message: string;
-};
+import { StatusType, ContactMessageType } from '../global';
 
 export default function ContactPage() {
   const [statusRes, setStatusRes] = useState<StatusType | null>(null);
