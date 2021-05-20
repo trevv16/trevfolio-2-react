@@ -32,7 +32,7 @@ export default function ProjectsPage() {
             <div className='transform translate-x-1/3'>
               <Loading />
             </div>
-          ) : projects !== [] && projects !== null ? (
+          ) : projects && projects !== null ? (
             <ProjectList data={projects} />
           ) : (
             <p className='font-sans text-2xl text-center text-gray-500'>Projects Unavailable</p>

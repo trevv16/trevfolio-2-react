@@ -35,7 +35,7 @@ export default function SkillsPage() {
             <div className='transform translate-x-1/3'>
               <Loading />
             </div>
-          ) : skills !== [] && skills !== null ? (
+          ) : skills && skills !== null ? (
             <SkillList skillData={skills} />
           ) : (
             <p className='font-sans text-2xl text-center text-gray-500'>Skills Unavailable</p>

@@ -97,11 +97,13 @@ export default function SkillDetailPage(props: any) {
         ) : (
           <>
             {skill && skill !== null ? (
-              <Header skill={skill} />
+              <>
+                <Header skill={skill} />
+                {skill?.projects && skill.projects.length > 0 && <ProjectsSection />}
+              </>
             ) : (
               <h1 className='font-sans text-center text-2xl font-bold tracking-tight sm:text-4xl'>Skill unavailable</h1>
             )}
-            {skill && skill !== null && <ProjectsSection />}
           </>
         )}
       </div>
