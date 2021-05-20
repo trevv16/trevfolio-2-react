@@ -1,7 +1,8 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from 'react';
+import React from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
+import { Link } from 'react-router-dom';
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ');
@@ -19,15 +20,15 @@ export default function Navigation() {
             <div className='flex justify-between h-16'>
               <div className='flex'>
                 <div className='flex-shrink-0 flex items-center'>
-                  <a href='/'>
+                  <Link to='/'>
                     <img className='block lg:hidden h-8 w-auto' src='TN_logo.png' alt='Trevor Njeru logo' />
                     <img className='hidden lg:block w-28 h-auto' src='TN_logo.png' alt='Trevor Njeru logo' />
-                  </a>
+                  </Link>
                 </div>
                 <div className='hidden sm:ml-6 sm:flex sm:space-x-8'>
                   {/* Current: "border-primary text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray hover:text-gray-700" */}
-                  <a
-                    href='/about'
+                  <Link
+                    to='/about'
                     className={`${
                       currentPage === '/about'
                         ? 'border-primary text-gray-900 border-b-2'
@@ -35,9 +36,9 @@ export default function Navigation() {
                     } inline-flex items-center px-1 pt-1 text-sm font-semibold`}
                   >
                     About
-                  </a>
-                  <a
-                    href='/skills'
+                  </Link>
+                  <Link
+                    to='/skills'
                     className={`${
                       currentPage === '/skills'
                         ? 'border-primary text-gray-900 border-b-2'
@@ -45,9 +46,9 @@ export default function Navigation() {
                     } inline-flex items-center px-1 pt-1 text-sm font-semibold`}
                   >
                     Skills
-                  </a>
-                  <a
-                    href='/projects'
+                  </Link>
+                  <Link
+                    to='/projects'
                     className={`${
                       currentPage === '/projects'
                         ? 'border-primary text-gray-900 border-b-2'
@@ -55,9 +56,9 @@ export default function Navigation() {
                     } inline-flex items-center px-1 pt-1 text-sm font-semibold`}
                   >
                     Projects
-                  </a>
-                  <a
-                    href='/contact'
+                  </Link>
+                  <Link
+                    to='/contact'
                     className={`${
                       currentPage === '/contact'
                         ? 'border-primary text-gray-900 border-b-2'
@@ -65,7 +66,7 @@ export default function Navigation() {
                     } inline-flex items-center px-1 pt-1 text-sm font-semibold`}
                   >
                     Contact
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className='-mr-2 flex items-center sm:hidden'>
@@ -85,8 +86,8 @@ export default function Navigation() {
           <Disclosure.Panel className='sm:hidden'>
             <div className='pt-2 pb-3 space-y-1'>
               {/* Current: "bg-primaryLight border-primary text-primary", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray hover:text-gray-700" */}
-              <a
-                href='/about'
+              <Link
+                to='/about'
                 className={`${
                   currentPage === '/about'
                     ? 'bg-primaryLight border-primary text-white'
@@ -94,9 +95,9 @@ export default function Navigation() {
                 } block pl-3 pr-4 py-2 border-l-4 text-base font-semibold`}
               >
                 About
-              </a>
-              <a
-                href='/skills'
+              </Link>
+              <Link
+                to='/skills'
                 className={`${
                   currentPage === '/skills'
                     ? 'bg-primaryLight border-primary text-white'
@@ -104,9 +105,9 @@ export default function Navigation() {
                 } block pl-3 pr-4 py-2 border-l-4 text-base font-semibold`}
               >
                 Skills
-              </a>
-              <a
-                href='/projects'
+              </Link>
+              <Link
+                to='/projects'
                 className={`${
                   currentPage === '/projects'
                     ? 'bg-primaryLight border-primary text-white'
@@ -114,9 +115,9 @@ export default function Navigation() {
                 } block pl-3 pr-4 py-2 border-l-4 text-base font-semibold`}
               >
                 Projects
-              </a>
-              <a
-                href='/contact'
+              </Link>
+              <Link
+                to='/contact'
                 className={`${
                   currentPage === '/contact'
                     ? 'bg-primaryLight border-primary text-white'
@@ -124,7 +125,7 @@ export default function Navigation() {
                 } block pl-3 pr-4 py-2 border-l-4 text-base font-semibold`}
               >
                 Contact
-              </a>
+              </Link>
             </div>
           </Disclosure.Panel>
         </>

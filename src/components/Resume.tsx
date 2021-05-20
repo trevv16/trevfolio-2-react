@@ -7,6 +7,7 @@ import api from '../utils/api';
 import { useFormik } from 'formik';
 
 import { Icon, SkillList } from '../components/index';
+import { Link } from 'react-router-dom';
 
 type StatusType = {
   status: string;
@@ -130,9 +131,11 @@ export default function Resume(props: any) {
             A computer science student based in Charlotte, NC. Enhancing my skills as a full stack developer with a keen
             interest in design.
           </p>
-          <button className='px-5 py-3 border border-transparent shadow text-base font-bold rounded-md text-white bg-primary hover:bg-primaryLight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0'>
-            View My Projects
-          </button>
+          <Link to='projects'>
+            <button className='px-5 py-3 border border-transparent shadow text-base font-bold rounded-md text-white bg-primary hover:bg-primaryLight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0'>
+              View My Projects
+            </button>
+          </Link>
         </div>
       </div>
     </>
@@ -276,9 +279,9 @@ export default function Resume(props: any) {
                 Highlighted Skills
               </p>
               <p className='max-w-xl mt-5 text-xl text-gray-500'>
-                <a href='/skills' className='text-primaryLight font-medium hover:text-gray-500'>
+                <Link to='/skills' className='text-primaryLight font-medium hover:text-gray-500'>
                   View all of my relevant skills here.
-                </a>
+                </Link>
               </p>
             </div>
             <SkillList skillData={skills} />

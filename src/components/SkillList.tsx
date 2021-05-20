@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import shortid from 'shortid';
 
 import { Icon } from '../components/index';
@@ -45,7 +46,7 @@ export default function SkillList(props: any) {
           <ul className='mx-auto grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 md:gap-x-6 lg:max-w-5xl lg:gap-x-8 lg:gap-y-12 xl:grid-cols-6'>
             {skillList.map((skill: any) => {
               return (
-                <a key={shortid.generate()} href={`/skills/${skill._id}`}>
+                <Link key={shortid.generate()} to={`/skills/${skill._id}`}>
                   <li>
                     <div className='space-y-4'>
                       <Icon size='w-20 h-20 lg:w-24 lg:h-24 mx-auto' skillName={skill.name} />
@@ -56,7 +57,7 @@ export default function SkillList(props: any) {
                       </div>
                     </div>
                   </li>
-                </a>
+                </Link>
               );
             })}
           </ul>

@@ -1,24 +1,25 @@
 import React from 'react';
 import shortid from 'shortid';
 import { HiOutlineEye, HiOutlineCode } from 'react-icons/hi';
+import { Link } from 'react-router-dom';
 
 export default function ProjectList(props: any) {
   const ProjectCard = ({ project }: any) => {
     return (
       <div className='my-12 space-y-4'>
-        <a href={`/projects/${project._id}`}>
+        <Link to={`/projects/${project._id}`}>
           <div className='aspect-w-3 aspect-h-2'>
             <img className='object-cover shadow-lg rounded-lg' src={project.thumbnail} alt='' />
           </div>
-        </a>
+        </Link>
 
         <div className='space-y-2'>
-          <a href={`/projects/${project._id}`}>
+          <Link to={`/projects/${project._id}`}>
             <div className='text-lg leading-6 font-medium space-y-1'>
               <h3 className='font-sans text-3xl truncate'>{project.title}</h3>
               <p className='font-sans text-sm text-primary'>{project.published}</p>
             </div>
-          </a>
+          </Link>
           <ul className='flex space-x-5'>
             <li>
               <a href={project.github_url} rel='noopener noreferrer' className='text-gray-400 hover:text-gray-500'>
