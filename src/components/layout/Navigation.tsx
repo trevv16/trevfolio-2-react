@@ -1,15 +1,20 @@
 /* This example requires Tailwind CSS v2.0+ */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ');
 }
 
 export default function Navigation() {
-  const currentPage = window.location.pathname;
+  let location = useLocation();
+  const [currentPage, setCurrentPage] = useState(window.location.pathname);
+
+  useEffect(() => {
+    setCurrentPage(location.pathname);
+  }, [location]);
 
   return (
     <Disclosure as='nav' className='font-sans bg-white shadow'>
