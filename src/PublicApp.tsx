@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
-import { Loading, PublicLayout } from './components/index';
+import { PublicLayout } from './components/index';
 import SuspenseFallback from './components/SuspenseFallback';
 
 const SignUpPage = lazy(() => import('./views/auth/SignUpPage'));

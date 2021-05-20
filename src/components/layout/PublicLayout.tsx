@@ -1,10 +1,6 @@
-import React, { useState } from 'react';
-
+import React from 'react';
 import { Navigation, Footer } from '../index';
 
-{
-  /* eslint-disable max-len  */
-}
 export default function PublicLayout(props: any) {
   return (
     <>

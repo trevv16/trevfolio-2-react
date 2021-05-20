@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Newsletter, Resume, SeoHelmet } from '../components/index';
 
 export default function HomePage() {

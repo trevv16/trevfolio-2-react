@@ -32,71 +32,54 @@ export default function HomePage(props: any) {
     switch (skill) {
       case 'aws':
         return <FaAws className={`${size} flex-shrink-0 hover:text-gray-500`} />;
-        break;
 
       case 'linux':
         return <SiLinux className={`${size} flex-shrink-0 hover:text-gray-500`} />;
-        break;
 
       case 'kubernetes':
         return <SiKubernetes className={`${size} flex-shrink-0 hover:text-gray-500`} />;
-        break;
 
       case 'azure':
         return <SiMicrosoftazure className={`${size} flex-shrink-0 hover:text-gray-500`} />;
-        break;
 
       case 'figma':
         return <FiFigma className={`${size} flex-shrink-0 hover:text-gray-500`} />;
-        break;
 
       case 'html':
         return <SiHtml5 className={`${size} flex-shrink-0 hover:text-gray-500`} />;
-        break;
 
       case 'css':
         return <SiCss3 className={`${size} flex-shrink-0 hover:text-gray-500`} />;
-        break;
 
       case 'tailwind':
         return <SiTailwindcss className={`${size} flex-shrink-0 hover:text-gray-500`} />;
-        break;
 
       case 'node':
         return <SiNodeDotJs className={`${size} flex-shrink-0 hover:text-gray-500`} />;
-        break;
 
       case 'react':
         return <SiReact className={`${size} flex-shrink-0 hover:text-gray-500`} />;
-        break;
 
       case 'typescript':
         return <SiTypescript className={`${size} flex-shrink-0 hover:text-gray-500`} />;
-        break;
 
       case 'python':
         return <SiPython className={`${size} flex-shrink-0 hover:text-gray-500`} />;
-        break;
 
       case 'django':
         return <SiDjango className={`${size} flex-shrink-0 hover:text-gray-500`} />;
-        break;
 
       case 'flask':
         return <SiFlask className={`${size} flex-shrink-0 hover:text-gray-500`} />;
-        break;
 
       case 'docker':
         return <SiDocker className={`${size} flex-shrink-0 hover:text-gray-500`} />;
-        break;
 
       case 'mysql':
         return <SiMysql className={`${size} flex-shrink-0 hover:text-gray-500`} />;
-        break;
 
       case 'mongodb':
         return <SiMongodb className={`${size} flex-shrink-0 hover:text-gray-500`} />;
-        break;
 
       default:
         return;

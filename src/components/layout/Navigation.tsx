@@ -1,12 +1,8 @@
 /* This example requires Tailwind CSS v2.0+ */
 import React, { useEffect, useState } from 'react';
-import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
+import { Disclosure } from '@headlessui/react';
+import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { Link, useLocation } from 'react-router-dom';
-
-function classNames(...classes: any) {
-  return classes.filter(Boolean).join(' ');
-}
 
 export default function Navigation() {
   let location = useLocation();

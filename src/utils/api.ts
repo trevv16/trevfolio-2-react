@@ -31,6 +31,7 @@ function fetch(url: string, params = {}) {
   });
 }
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   fetch(url: string, params = {}) {
     return fetch(url, params);
