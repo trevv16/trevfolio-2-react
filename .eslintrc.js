@@ -4,7 +4,6 @@ module.exports = {
     node: true,
     es2020: true
   },
-  // parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: 'module',
@@ -21,7 +20,11 @@ module.exports = {
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
+    'plugin:jsx-a11y/recommended',
+    'plugin:flowtype/recommended',
+    'plugin:jest/style',
+    'react-app'
   ],
   rules: {
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
@@ -45,7 +48,7 @@ module.exports = {
       }
     ],
     'max-len': [
-      'warn',
+      'error',
       {
         code: 120,
         tabWidth: 4,
@@ -59,5 +62,5 @@ module.exports = {
       }
     ]
   },
-  plugins: ['prettier', 'react-hooks']
+  plugins: ['prettier', 'jsx-a11y', 'flowtype', 'jest', 'testing-library', 'react-hooks']
 };
