@@ -1,6 +1,9 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
+import { AppLayout } from './components/index';
+import SuspenseFallback from './components/SuspenseFallback';
+
 const HomePage = lazy(() => import('./views/HomePage'));
 const AboutPage = lazy(() => import('./views/AboutPage'));
 const ContactPage = lazy(() => import('./views/ContactPage'));
@@ -10,9 +13,6 @@ const SkillsPage = lazy(() => import('./views/skills/SkillsPage'));
 const SkillDetailPage = lazy(() => import('./views/skills/SkillDetailPage'));
 const Error404 = lazy(() => import('./views/error/Error404'));
 const Error500 = lazy(() => import('./views/error/Error500'));
-
-import { AppLayout } from './components/index';
-import SuspenseFallback from './components/SuspenseFallback';
 
 export default function AuthenticatedApp() {
   const SignOutHandler = () => {

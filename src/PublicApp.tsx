@@ -1,6 +1,9 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
+import { Loading, PublicLayout } from './components/index';
+import SuspenseFallback from './components/SuspenseFallback';
+
 const SignUpPage = lazy(() => import('./views/auth/SignUpPage'));
 const SignInPage = lazy(() => import('./views/auth/SignInPage'));
 const ForgotPage = lazy(() => import('./views/auth/ForgotPage'));
@@ -14,9 +17,6 @@ const SkillsPage = lazy(() => import('./views/skills/SkillsPage'));
 const SkillDetailPage = lazy(() => import('./views/skills/SkillDetailPage'));
 const Error404 = lazy(() => import('./views/error/Error404'));
 const Error500 = lazy(() => import('./views/error/Error500'));
-
-import { Loading, PublicLayout } from './components/index';
-import SuspenseFallback from './components/SuspenseFallback';
 
 export default function PublicApp() {
   const SignOutHandler = () => {
