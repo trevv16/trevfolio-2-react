@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import dayjs from 'dayjs';
 import { HiOutlineEye, HiOutlineCode } from 'react-icons/hi';
 
 import useFetch from '../../hooks/useFetch';
 import { Alert, Loading, SkillList, SeoHelmet } from '../../components/index';
-import { ProjectType, SkillType } from '../../global';
+import { ProjectType } from '../../global';
 
 export default function ProjectDetailPage(props: any) {
   const projectID = props.match.params.projectID;
