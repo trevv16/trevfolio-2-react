@@ -12,12 +12,14 @@ type SkillType = {
 };
 
 export default function SkillsPage() {
-  const [skills, setSkills] = useState<SkillType[]>([]);
+  const [skills, setSkills] = useState<SkillType[] | null>([]);
   const { response, error, isLoading } = useFetch('api/v1/skills');
 
   useEffect(() => {
     if (response && response !== null) {
       setSkills(response.data.data);
+    } else {
+      setSkills(null);
     }
   }, [response, error, isLoading]);
 
@@ -40,10 +42,10 @@ export default function SkillsPage() {
             <div className='transform translate-x-1/3'>
               <Loading />
             </div>
-          ) : skills ? (
+          ) : skills !== [] && skills !== null ? (
             <SkillList skillData={skills} />
           ) : (
-            <p className='font-sans text-2xl text-center text-gray-500'>Unavailable</p>
+            <p className='font-sans text-2xl text-center text-gray-500'>Skills Unavailable</p>
           )}
         </div>
       </div>

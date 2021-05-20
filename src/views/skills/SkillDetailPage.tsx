@@ -20,6 +20,8 @@ export default function SkillDetailPage(props: any) {
   useEffect(() => {
     if (response !== null) {
       setSkill(response.data.data[0]);
+    } else {
+      setSkill(null);
     }
   }, [response, error, isLoading]);
 
@@ -86,21 +88,27 @@ export default function SkillDetailPage(props: any) {
   return (
     <>
       <SeoHelmet
-        title={`${skill.name || 'Skill'} | Trevor's Portfolio`}
+        title={`${skill?.name || 'Skill'} | Trevor's Portfolio`}
         description=''
         image=''
         image_alt='Trevor Njeru logo'
       />
       <div>
-        {error !== null && <Alert status='error'>{error.message}</Alert>}
+        <div className='max-w-7xl mx-auto pt-8 px-4 sm:py-24 sm:px-6 lg:px-8'>
+          {error !== null && <Alert status='error'>{error.message}</Alert>}
+        </div>
         {isLoading ? (
           <div className='transform translate-x-1/3'>
             <Loading />
           </div>
         ) : (
           <>
-            {skill && skill !== {} && <Header skill={skill} />}
-            {projects !== [] && <ProjectsSection />}
+            {skill && skill !== null ? (
+              <Header skill={skill} />
+            ) : (
+              <h1 className='font-sans text-center text-2xl font-bold tracking-tight sm:text-4xl'>Skill unavailable</h1>
+            )}
+            {skill && skill !== null && <ProjectsSection />}
           </>
         )}
       </div>

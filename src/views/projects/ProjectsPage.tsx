@@ -10,6 +10,8 @@ export default function ProjectsPage() {
   useEffect(() => {
     if (response && response !== null) {
       setProjects(response.data.data);
+    } else {
+      setProjects(null);
     }
   }, [response, error, isLoading]);
 
@@ -29,10 +31,10 @@ export default function ProjectsPage() {
             <div className='transform translate-x-1/3'>
               <Loading />
             </div>
-          ) : projects ? (
+          ) : projects !== [] && projects !== null ? (
             <ProjectList data={projects} />
           ) : (
-            <p className='font-sans text-2xl text-center text-gray-500'>Unavailable</p>
+            <p className='font-sans text-2xl text-center text-gray-500'>Projects Unavailable</p>
           )}
         </div>
       </div>

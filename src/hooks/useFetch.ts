@@ -11,10 +11,19 @@ const useFetch = (url: string) => {
       setIsLoading(true);
       try {
         const res = await api.fetch(url);
-        setResponse(res);
+        if (res) {
+          setResponse(res);
+        } else {
+          setResponse(null);
+        }
+        setError(null);
         setIsLoading(false);
       } catch (error) {
         setError(error);
+        setIsLoading(false);
+        setTimeout(function () {
+          setError(null);
+        }, 3000);
       }
     };
 

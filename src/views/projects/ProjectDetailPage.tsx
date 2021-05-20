@@ -64,6 +64,8 @@ export default function ProjectDetailPage(props: any) {
   useEffect(() => {
     if (response !== null) {
       setProject(response.data.data[0]);
+    } else {
+      setProject(null);
     }
   }, [response, error, isLoading]);
 
@@ -101,28 +103,38 @@ export default function ProjectDetailPage(props: any) {
   return (
     <>
       <SeoHelmet
-        title={`${project.title} | Trevor's Portfolio`}
+        title={`${project?.title || ''} | Trevor's Portfolio`}
         description=''
         image=''
         image_alt='Trevor Njeru logo'
       />
       <div className='container mx-auto'>
-        {error !== null && <Alert status='error'>{error.message}</Alert>}
+        <div className='mx-auto max-w-7xl px-4 sm:py-8 sm:px-6 lg:px-8'>
+          {error !== null && <Alert status='error'>{error.message}</Alert>}
+        </div>
         {isLoading ? (
           <div className='my-12 transform translate-x-1/3'>
             <Loading />
           </div>
         ) : (
           <>
-            {project && project !== {} && <Header />}
-            <div className='mx-auto max-w-7xl px-4 sm:py-8 sm:px-6 lg:px-8'>
-              <div className='mt-4'>
-                <h1 className='font-sans text-center text-3xl font-extrabold tracking-tight sm:text-4xl'>
-                  Skills Used
-                </h1>
+            {project && project !== null ? (
+              <Header />
+            ) : (
+              <h1 className='font-sans text-center text-2xl font-bold tracking-tight sm:text-4xl'>
+                Project unavailable
+              </h1>
+            )}
+            {project && project !== null && (
+              <div className='mx-auto max-w-7xl px-4 sm:py-8 sm:px-6 lg:px-8'>
+                <div className='mt-4'>
+                  <h1 className='font-sans text-center text-3xl font-extrabold tracking-tight sm:text-4xl'>
+                    Skills Used
+                  </h1>
+                </div>
+                <SkillList skillData={skills} />
               </div>
-              {skills !== [] && <SkillList skillData={skills} />}
-            </div>
+            )}
           </>
         )}
       </div>
