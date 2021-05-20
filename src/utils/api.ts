@@ -1,3 +1,4 @@
+/* eslint-disable security/detect-object-injection */
 import axios from 'axios';
 import Auth from '../Auth';
 

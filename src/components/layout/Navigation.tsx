@@ -12,6 +12,14 @@ export default function Navigation() {
     setCurrentPage(location.pathname);
   }, [location]);
 
+  const activeLink = 'border-primary text-gray-900 border-b-2';
+  const inactiveLink = 'border-transparent text-gray-500 hover:border-gray hover:text-gray-700';
+  const linkDefault = 'inline-flex items-center px-1 pt-1 text-sm font-semibold';
+
+  const mobileActiveLink = 'bg-primaryLight border-primary text-white';
+  const mobileInactiveLink = 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray hover:text-gray-700';
+  const mobileDefaultLink = 'block pl-3 pr-4 py-2 border-l-4 text-base font-semibold';
+
   return (
     <Disclosure as='nav' className='font-sans bg-white shadow'>
       {/* eslint-disable max-len */}
@@ -30,41 +38,25 @@ export default function Navigation() {
                   {/* Current: "border-primary text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray hover:text-gray-700" */}
                   <Link
                     to='/about'
-                    className={`${
-                      currentPage === '/about'
-                        ? 'border-primary text-gray-900 border-b-2'
-                        : 'border-transparent text-gray-500 hover:border-gray hover:text-gray-700'
-                    } inline-flex items-center px-1 pt-1 text-sm font-semibold`}
+                    className={`${currentPage === '/about' ? activeLink : inactiveLink} ${linkDefault}`}
                   >
                     About
                   </Link>
                   <Link
                     to='/skills'
-                    className={`${
-                      currentPage === '/skills'
-                        ? 'border-primary text-gray-900 border-b-2'
-                        : 'border-transparent text-gray-500 hover:border-gray hover:text-gray-700'
-                    } inline-flex items-center px-1 pt-1 text-sm font-semibold`}
+                    className={`${currentPage === '/skills' ? activeLink : inactiveLink} ${linkDefault}`}
                   >
                     Skills
                   </Link>
                   <Link
                     to='/projects'
-                    className={`${
-                      currentPage === '/projects'
-                        ? 'border-primary text-gray-900 border-b-2'
-                        : 'border-transparent text-gray-500 hover:border-gray hover:text-gray-700'
-                    } inline-flex items-center px-1 pt-1 text-sm font-semibold`}
+                    className={`${currentPage === '/projects' ? activeLink : inactiveLink} ${linkDefault}`}
                   >
                     Projects
                   </Link>
                   <Link
                     to='/contact'
-                    className={`${
-                      currentPage === '/contact'
-                        ? 'border-primary text-gray-900 border-b-2'
-                        : 'border-transparent text-gray-500 hover:border-gray hover:text-gray-700'
-                    } inline-flex items-center px-1 pt-1 text-sm font-semibold`}
+                    className={`${currentPage === '/contact' ? activeLink : inactiveLink} ${linkDefault}`}
                   >
                     Contact
                   </Link>
@@ -89,41 +81,27 @@ export default function Navigation() {
               {/* Current: "bg-primaryLight border-primary text-primary", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray hover:text-gray-700" */}
               <Link
                 to='/about'
-                className={`${
-                  currentPage === '/about'
-                    ? 'bg-primaryLight border-primary text-white'
-                    : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray hover:text-gray-700'
-                } block pl-3 pr-4 py-2 border-l-4 text-base font-semibold`}
+                className={`${currentPage === '/about' ? mobileActiveLink : mobileInactiveLink} ${mobileDefaultLink}`}
               >
                 About
               </Link>
               <Link
                 to='/skills'
-                className={`${
-                  currentPage === '/skills'
-                    ? 'bg-primaryLight border-primary text-white'
-                    : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray hover:text-gray-700'
-                } block pl-3 pr-4 py-2 border-l-4 text-base font-semibold`}
+                className={`${currentPage === '/skills' ? mobileActiveLink : mobileInactiveLink} ${mobileDefaultLink}`}
               >
                 Skills
               </Link>
               <Link
                 to='/projects'
                 className={`${
-                  currentPage === '/projects'
-                    ? 'bg-primaryLight border-primary text-white'
-                    : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray hover:text-gray-700'
-                } block pl-3 pr-4 py-2 border-l-4 text-base font-semibold`}
+                  currentPage === '/projects' ? mobileActiveLink : mobileInactiveLink
+                } ${mobileDefaultLink}`}
               >
                 Projects
               </Link>
               <Link
                 to='/contact'
-                className={`${
-                  currentPage === '/contact'
-                    ? 'bg-primaryLight border-primary text-white'
-                    : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray hover:text-gray-700'
-                } block pl-3 pr-4 py-2 border-l-4 text-base font-semibold`}
+                className={`${currentPage === '/contact' ? mobileActiveLink : mobileInactiveLink} ${mobileDefaultLink}`}
               >
                 Contact
               </Link>

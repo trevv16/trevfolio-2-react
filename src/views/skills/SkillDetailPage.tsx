@@ -18,31 +18,29 @@ export default function SkillDetailPage(props: any) {
     }
   }, [response, error, isLoading]);
 
+  const dateFormat = 'MMM D, YYYY';
   const projects = [
     {
       _id: 'ajk324n2krw6f7ade',
       title: 'Trevfolio',
-      published: dayjs('2019-01-25').format('MMM D, YYYY'),
-      thumbnail:
-        'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
+      published: dayjs('2019-05-16').format(dateFormat),
+      thumbnail: 'https://source.unsplash.com/random/600x300',
       github_url: 'https://github.com/trevva16/trevfolio-2-node',
       demo_url: 'https://trevornjeru.com'
     },
     {
       _id: 'ajk32adsfarw6f7ade',
       title: 'Trevfolio',
-      published: dayjs('2019-01-25').format('MMM D, YYYY'),
-      thumbnail:
-        'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
+      published: dayjs('2020-03-04').format(dateFormat),
+      thumbnail: 'https://source.unsplash.com/random/500x300',
       github_url: 'https://github.com/trevva16/trevfolio-2-node',
       demo_url: 'https://trevornjeru.com'
     },
     {
       _id: 'a24n2krwasdfaade',
       title: 'Trevfolio',
-      published: dayjs('2019-01-25').format('MMM D, YYYY'),
-      thumbnail:
-        'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
+      published: dayjs('2019-11-25').format(dateFormat),
+      thumbnail: 'https://source.unsplash.com/random/400x200',
       github_url: 'https://github.com/trevva16/trevfolio-2-node',
       demo_url: 'https://trevornjeru.com'
     }

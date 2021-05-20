@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+/* eslint-disable no-secrets/no-secrets */
 import React from 'react';
 import shortid from 'shortid';
 import { BookOpenIcon } from '@heroicons/react/outline';
@@ -9,19 +10,12 @@ import dayjs from 'dayjs';
 
 import { Icon, SkillList } from '../components/index';
 import { Link } from 'react-router-dom';
+import { SkillType } from '../global';
 
 // type StatusType = {
 //   status: string;
 //   message: string;
 // };
-
-type SkillType = {
-  _id: string;
-  category: string;
-  name: string;
-  description: string;
-  thumbnail: string;
-};
 
 export default function Resume(props: any) {
   // const [statusRes, setStatusRes] = useState<StatusType | null>(null);
@@ -78,40 +72,40 @@ export default function Resume(props: any) {
       category: 'Front-End',
       name: 'React',
       description: '',
-      thumbnail:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
+      featured: true,
+      published: true
     },
     {
       _id: 'k24l1dfoadfwvb89s',
       category: 'Back-End',
       name: 'Node',
       description: '',
-      thumbnail:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
+      featured: true,
+      published: true
     },
     {
       _id: 'k24l1fsgdsab3bvb89s',
       category: 'Front-End',
       name: 'Typescript',
       description: '',
-      thumbnail:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
+      featured: true,
+      published: true
     },
     {
       _id: 'k24af2m2e2f423bvbafd',
       category: 'Back-End',
       name: 'Typescript',
       description: '',
-      thumbnail:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
+      featured: true,
+      published: true
     },
     {
       _id: 'l2nfada7a5j7l8n42',
       category: 'Deployment',
       name: 'AWS',
       description: '',
-      thumbnail:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
+      featured: true,
+      published: true
     }
   ];
 
