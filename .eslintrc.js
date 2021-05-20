@@ -4,13 +4,14 @@ module.exports = {
     node: true,
     es2020: true
   },
-  parserOptions: {
-    ecmaVersion: 2020,
-    sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true // Allows for the parsing of JSX
-    }
-  },
+  parser: '@typescript-eslint/parser',
+  // parserOptions: {
+  //   ecmaVersion: 2020,
+  //   sourceType: 'module',
+  //   ecmaFeatures: {
+  //     jsx: true // Allows for the parsing of JSX
+  //   }
+  // },
   settings: {
     react: {
       version: 'detect' // Tells eslint-plugin-react to automatically detect the version of React to use
@@ -22,10 +23,13 @@ module.exports = {
     'plugin:import/typescript',
     'plugin:prettier/recommended',
     'plugin:jsx-a11y/recommended',
+    'plugin:sonarjs/recommended',
+    'plugin:security/recommended',
     'plugin:jest/style',
     'react-app'
   ],
   rules: {
+    'no-secrets/no-secrets': 'error',
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
     quotes: [
@@ -61,5 +65,25 @@ module.exports = {
       }
     ]
   },
-  plugins: ['prettier', 'jsx-a11y', 'jest', 'testing-library', 'react-hooks']
+  overrides: [
+    {
+      files: 'server/**/*.js',
+      env: { node: true },
+      rules: {
+        'simple-import-sort/imports': 'off',
+        'import/order': ['error', { 'newlines-between': 'always' }]
+      }
+    }
+  ],
+  plugins: [
+    'prettier',
+    'simple-import-sort',
+    'sonarjs',
+    'no-secrets',
+    'security',
+    'jsx-a11y',
+    'jest',
+    'testing-library',
+    'react-hooks'
+  ]
 };
