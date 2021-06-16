@@ -23,7 +23,6 @@ module.exports = {
     'plugin:import/typescript',
     'plugin:prettier/recommended',
     'plugin:jsx-a11y/recommended',
-    'plugin:sonarjs/recommended',
     'plugin:security/recommended',
     'plugin:jest/style',
     'react-app'
@@ -78,7 +77,6 @@ module.exports = {
   plugins: [
     'prettier',
     'simple-import-sort',
-    'sonarjs',
     'no-secrets',
     'security',
     'jsx-a11y',
