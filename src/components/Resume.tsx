@@ -148,7 +148,8 @@ export default function Resume(props: any) {
             </div>
             <h1 className='mt-6 text-2xl font-bold text-gray-600'>University of North Carolina at Charlotte</h1>
             <h2 className='mt-2 text-xl font-medium text-gray-700'>BA in Computer Science</h2>
-            <p className='mt-2 text-xl font-medium text-gray-400'>2016 - In Progress</p>
+            <p className='mt-2 text-xl font-medium text-gray-400'>Concentration in Human-Computer Interaction</p>
+            <p className='mt-2 text-lg font-medium text-gray-400'>2016 - In Progress</p>
           </div>
         </div>
       </>
@@ -165,16 +166,16 @@ export default function Resume(props: any) {
         skill_icon: 'aws',
         cert_link: 'https://www.credly.com/badges/2ed2af89-8b73-40e0-b76a-1bf9f706b7aa/public_url',
         cert_info_link: 'https://aws.amazon.com/certification/certified-cloud-practitioner/'
+      },
+      {
+        name: 'AWS Solutions Architect',
+        cert_from: 'Amazon Web Services',
+        date: '06-20-2021',
+        skill: 'AWS',
+        skill_icon: 'aws',
+        cert_link: 'https://www.credly.com/badges/ce3d0c5c-f166-446a-aba8-71bf7ba7f102/public_url',
+        cert_info_link: 'https://aws.amazon.com/certification/certified-solutions-architect-associate/'
       }
-      // {
-      //   name: 'AWS Solutions Architect',
-      //   cert_from: 'Amazon Web Services',
-      //   date: 'Date',
-      //   skill: 'AWS',
-      //   skill_icon: 'aws',
-      //   cert_link: '#',
-      //   cert_info_link: '#'
-      // },
       // {
       //   name: 'Kubernetes App Developer',
       //   cert_from: 'Cloud Native Computing Foundation',
