@@ -50,7 +50,7 @@ module.exports = {
       }
     ],
     'max-len': [
-      'error',
+      'warn',
       {
         code: 120,
         tabWidth: 4,
@@ -74,14 +74,5 @@ module.exports = {
       }
     }
   ],
-  plugins: [
-    'prettier',
-    'simple-import-sort',
-    'no-secrets',
-    'security',
-    'jsx-a11y',
-    'jest',
-    'testing-library',
-    'react-hooks'
-  ]
+  plugins: ['prettier', 'simple-import-sort', 'no-secrets', 'security', 'jsx-a11y', 'jest', 'react-hooks']
 };
