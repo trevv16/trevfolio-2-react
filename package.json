@@ -22,6 +22,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "shortid": "^2.2.16",
+    "@tailwindcss/postcss7-compat": "^2.1.2",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2",
     "typescript": "^4.1.2",
     "web-vitals": "^1.1.2"
   },
@@ -61,7 +63,6 @@
     ]
   },
   "devDependencies": {
-    "@tailwindcss/postcss7-compat": "^2.1.2",
     "@types/react": "^17.0.6",
     "@types/react-dom": "^17.0.5",
     "@types/react-router-dom": "^5.1.7",
@@ -84,7 +85,6 @@
     "husky": "^5.2.0",
     "lint-staged": "^10.5.4",
     "postcss": "^7.0.35",
-    "prettier": "^2.3.0",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2"
+    "prettier": "^2.3.0"
   }
 }
