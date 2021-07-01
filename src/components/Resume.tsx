@@ -120,7 +120,7 @@ export default function Resume(props: any) {
             Trevor Njeru
           </h1>
           <h1 className='mt-4 font-extrabold text-primary sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl'>
-            Full Stack Developer
+            Software Engineer
           </h1>
           <p className='max-w-2xl my-8 mx-auto text-xl text-gray-500'>
             A computer science student based in Charlotte, NC. Enhancing my skills as a full stack developer with a keen
