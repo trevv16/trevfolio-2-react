@@ -1,8 +1,14 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import { SITE_NAME, SITE_DESC, SITE_IMG, SITE_URL } from '../../Config';
+import { getSeo } from '../../utils/seo';
 
 export default function ResetPasswordPage() {
+  const title = `Reset Password | ${SITE_NAME}`;
+
   return (
-    <div>
+    <>
+      <Helmet>{getSeo(title, SITE_DESC, SITE_IMG, SITE_URL)}</Helmet>
       <div className='min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8'>
         <div className='sm:mx-auto sm:w-full sm:max-w-md'>
           <img
@@ -116,6 +122,6 @@ export default function ResetPasswordPage() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

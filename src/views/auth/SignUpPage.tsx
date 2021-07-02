@@ -1,9 +1,15 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import { SITE_NAME, SITE_DESC, SITE_IMG, SITE_URL } from '../../Config';
+import { getSeo } from '../../utils/seo';
 
 export default function SignUpPage() {
+  const title = `Sign Up | ${SITE_NAME}`;
+
   return (
-    <div>
+    <>
+      <Helmet>{getSeo(title, SITE_DESC, SITE_IMG, SITE_URL)}</Helmet>
       <div className='min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8'>
         <div className='sm:mx-auto sm:w-full sm:max-w-md'>
           <img
@@ -156,6 +162,6 @@ export default function SignUpPage() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
