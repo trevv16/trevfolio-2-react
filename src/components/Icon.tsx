@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaAws } from 'react-icons/fa';
 import { FiFigma } from 'react-icons/fi';
+import { AiOutlineGithub, AiOutlineInstagram, AiOutlineLinkedin } from 'react-icons/ai';
 import {
   SiKubernetes,
   SiLinux,
@@ -20,16 +21,14 @@ import {
 } from 'react-icons/si';
 
 export default function HomePage(props: any) {
-  const [skill, setSkill] = useState(props.skillName);
   const [size, setSize] = useState('w-10 h-10');
 
   useEffect(() => {
-    setSkill(props.skillName);
     setSize(props.size);
-  }, [props.skillName, props.size]);
+  }, [props.size]);
 
   const getSkillIcon = (skill: string) => {
-    switch (skill) {
+    switch (skill.toLowerCase()) {
       case 'aws':
         return <FaAws className={`${size} flex-shrink-0 hover:text-gray-500`} />;
 
@@ -81,10 +80,19 @@ export default function HomePage(props: any) {
       case 'mongodb':
         return <SiMongodb className={`${size} flex-shrink-0 hover:text-gray-500`} />;
 
+      case 'linkedin':
+        return <AiOutlineLinkedin className={`${size} flex-shrink-0 hover:text-gray-500`} />;
+
+      case 'github':
+        return <AiOutlineGithub className={`${size} flex-shrink-0 hover:text-gray-500`} />;
+
+      case 'instagram':
+        return <AiOutlineInstagram className={`${size} flex-shrink-0 hover:text-gray-500`} />;
+
       default:
         return;
     }
   };
 
-  return <>{getSkillIcon(skill.toLowerCase())}</>;
+  return <>{getSkillIcon(props.skillName)}</>;
 }
