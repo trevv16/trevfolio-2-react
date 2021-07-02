@@ -7,52 +7,11 @@ import { ProjectType } from '../../global';
 import { Helmet } from 'react-helmet-async';
 import { SITE_NAME, SITE_DESC, SITE_IMG, SITE_URL } from '../../Config';
 import { getSeo } from '../../utils/seo';
+import api from '../../utils/api';
 
 export default function ProjectDetailPage(props: any) {
   const projectID = props.match.params.projectID;
   const [project, setProject] = useState<ProjectType | null>(null);
-  const skills: any[] = [
-    {
-      _id: 'k24l1fsgd323mvb89s',
-      category: 'Front-End',
-      name: 'React',
-      description: '',
-      published: true,
-      featured: true
-    },
-    {
-      _id: 'k24l1dfoadfwvb89s',
-      category: 'Back-End',
-      name: 'Node',
-      description: '',
-      published: true,
-      featured: true
-    },
-    {
-      _id: 'k24l1fsgdsab3bvb89s',
-      category: 'Front-End',
-      name: 'Typescript',
-      description: '',
-      published: true,
-      featured: true
-    },
-    {
-      _id: 'k24af2m2e2f423bvbafd',
-      category: 'Back-End',
-      name: 'Typescript',
-      description: '',
-      published: true,
-      featured: true
-    },
-    {
-      _id: 'l2nfada7a5j7l8n42',
-      category: 'Deployment',
-      name: 'AWS',
-      description: '',
-      published: true,
-      featured: true
-    }
-  ];
 
   const { response, error, isLoading } = useFetch(`api/v1/projects/${projectID}`);
 
@@ -96,7 +55,6 @@ export default function ProjectDetailPage(props: any) {
   );
 
   const title = `${project?.title || 'Projects'} | ${SITE_NAME}`;
-
   return (
     <>
       <Helmet>{getSeo(title, SITE_DESC, SITE_IMG, SITE_URL)}</Helmet>
@@ -124,7 +82,9 @@ export default function ProjectDetailPage(props: any) {
                     Skills Used
                   </h1>
                 </div>
-                <SkillList skillData={skills} />
+                {project?.skills && project?.skills !== null && project?.skills.length > 0 && (
+                  <SkillList skillData={project?.skills} />
+                )}
               </div>
             )}
           </>
