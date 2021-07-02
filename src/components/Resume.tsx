@@ -155,8 +155,8 @@ export default function Resume(props: any) {
             </a>
           </div>
           <p className='max-w-2xl my-8 mx-auto text-xl text-gray-500'>
-            A computer science student based in Charlotte, NC. Enhancing my skills as a full stack developer with a keen
-            interest in design.
+            I am a software engineer with strengths in cloud architectures who seeks to become a well-sought after
+            professional.
           </p>
           <Link to='projects'>
             <button className='px-5 py-3 border border-transparent shadow text-base font-bold rounded-md text-white bg-primary hover:bg-primaryLight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0'>
