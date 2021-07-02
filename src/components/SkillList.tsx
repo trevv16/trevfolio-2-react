@@ -49,7 +49,7 @@ export default function SkillList(props: any) {
                 <Link key={shortid.generate()} to={`/skills/${skill._id}`}>
                   <li>
                     <div className='space-y-4'>
-                      <Icon size='w-20 h-20 lg:w-24 lg:h-24 mx-auto' skillName={skill.name} />
+                      <Icon size='w-20 h-20 lg:w-24 lg:h-24 mx-auto' skillName={skill.name.toLowerCase()} />
                       <div className='space-y-2'>
                         <div className='text-xs font-medium lg:text-sm'>
                           <h3 className='font-sans'>{skill.name}</h3>
