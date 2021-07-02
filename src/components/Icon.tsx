@@ -80,6 +80,9 @@ export default function HomePage(props: any) {
       case 'mongodb':
         return <SiMongodb className={`${size} flex-shrink-0 hover:text-gray-500`} />;
 
+      case 'lambda':
+        return <FaAws className={`${size} flex-shrink-0 hover:text-gray-500`} />;
+
       case 'linkedin':
         return <AiOutlineLinkedin className={`${size} flex-shrink-0 hover:text-gray-500`} />;
 
