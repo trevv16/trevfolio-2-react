@@ -7,7 +7,6 @@ import { ProjectType } from '../../global';
 import { Helmet } from 'react-helmet-async';
 import { SITE_NAME, SITE_DESC, SITE_IMG, SITE_URL } from '../../Config';
 import { getSeo } from '../../utils/seo';
-import api from '../../utils/api';
 
 export default function ProjectDetailPage(props: any) {
   const projectID = props.match.params.projectID;
