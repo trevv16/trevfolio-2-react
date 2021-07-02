@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { HiOutlineEye, HiOutlineCode } from 'react-icons/hi';
 
 import useFetch from '../../hooks/useFetch';
-import { Alert, Loading, SkillList, SeoHelmet } from '../../components/index';
+import { Alert, Loading, SkillList } from '../../components/index';
 import { ProjectType } from '../../global';
+import { Helmet } from 'react-helmet-async';
+import { SITE_NAME, SITE_DESC, SITE_IMG, SITE_URL } from '../../Config';
+import { getSeo } from '../../utils/seo';
 
 export default function ProjectDetailPage(props: any) {
   const projectID = props.match.params.projectID;
@@ -92,14 +95,11 @@ export default function ProjectDetailPage(props: any) {
     </div>
   );
 
+  const title = `${project?.title || 'Projects'} | ${SITE_NAME}`;
+
   return (
     <>
-      <SeoHelmet
-        title={`${project?.title || ''} | Trevor's Portfolio`}
-        description=''
-        image=''
-        image_alt='Trevor Njeru logo'
-      />
+      <Helmet>{getSeo(title, SITE_DESC, SITE_IMG, SITE_URL)}</Helmet>
       <div className='container mx-auto'>
         <div className='mx-auto max-w-7xl px-4 sm:py-8 sm:px-6 lg:px-8'>
           {error !== null && <Alert status='error'>{error.message}</Alert>}
