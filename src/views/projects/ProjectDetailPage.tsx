@@ -13,15 +13,21 @@ export default function ProjectDetailPage(props: any) {
   const projectID = props.match.params.projectID;
   const [project, setProject] = useState<ProjectType | null>(null);
 
-  const { response, error, isLoading } = useFetch(`api/v1/projects/${projectID}`);
+  const { response, error, isLoading } = useFetch(`api/v1/projects`);
 
   useEffect(() => {
     if (response !== null) {
-      setProject(response.data.data[0]);
+      const list: ProjectType[] = response.data.data;
+
+      const projectData = list.filter((proj: ProjectType) => {
+        return proj._id === projectID;
+      });
+
+      setProject(projectData[0]);
     } else {
       setProject(null);
     }
-  }, [response, error, isLoading]);
+  }, [response, error, isLoading, projectID]);
 
   const Header = () => (
     <div className='max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8'>
