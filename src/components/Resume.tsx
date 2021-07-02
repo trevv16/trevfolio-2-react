@@ -119,9 +119,41 @@ export default function Resume(props: any) {
           <h1 className='font-extrabold text-gray-900 text-5xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-6xl'>
             Trevor Njeru
           </h1>
-          <h1 className='mt-4 font-extrabold text-primary sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl'>
+          <h1 className='my-4 font-extrabold text-primary sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl'>
             Software Engineer
           </h1>
+
+          <div className='flex justify-center space-x-6 md:order-2'>
+            <a
+              href='https://linkedin.com/in/trevornjeru'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='text-gray-400 hover:text-gray-500'
+            >
+              <span className='sr-only'>Linkedin</span>
+              <Icon skillName='linkedin' size='w-8 h-8' />
+            </a>
+
+            <a
+              href='https://github.com/trevv16'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='text-gray-400 hover:text-gray-500'
+            >
+              <span className='sr-only'>GitHub</span>
+              <Icon skillName='github' size='w-8 h-8' />
+            </a>
+
+            <a
+              href='https://instagram.com/trevva_'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='text-gray-400 hover:text-gray-500'
+            >
+              <span className='sr-only'>Instagram</span>
+              <Icon skillName='instagram' size='w-8 h-8' />
+            </a>
+          </div>
           <p className='max-w-2xl my-8 mx-auto text-xl text-gray-500'>
             A computer science student based in Charlotte, NC. Enhancing my skills as a full stack developer with a keen
             interest in design.
