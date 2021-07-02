@@ -28,7 +28,7 @@ export default function HomePage(props: any) {
   }, [props.size]);
 
   const getSkillIcon = (skill: string) => {
-    switch (skill.toLowerCase()) {
+    switch (skill?.toLowerCase()) {
       case 'aws':
         return <FaAws className={`${size} flex-shrink-0 hover:text-gray-500`} />;
 
