@@ -50,7 +50,7 @@ export default function HomePage(props: any) {
       case 'css':
         return <SiCss3 className={`${size} flex-shrink-0 hover:text-gray-500`} />;
 
-      case 'tailwind':
+      case 'tailwind css':
         return <SiTailwindcss className={`${size} flex-shrink-0 hover:text-gray-500`} />;
 
       case 'node':
