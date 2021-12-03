@@ -67,9 +67,7 @@ export default function Newsletter(props: any) {
             <h2 className='text-2xl font-extrabold tracking-tight text-white sm:text-3xl'>
               Want project news and updates?
             </h2>
-            <p className='mt-3 max-w-3xl text-lg leading-6 text-white'>
-              Sign up for our newsletter to stay up to date.
-            </p>
+            <p className='mt-3 max-w-3xl text-lg leading-6 text-white'>Sign up for to stay up to date.</p>
           </div>
           <div className='mt-8 sm:w-full sm:max-w-md xl:mt-0 xl:ml-8'>
             <form onSubmit={formik.handleSubmit} className='font-sans sm:flex'>
