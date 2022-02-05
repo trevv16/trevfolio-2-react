@@ -181,7 +181,6 @@ export default function Resume(props: any) {
             <h1 className='mt-6 text-2xl font-bold text-gray-600'>University of North Carolina at Charlotte</h1>
             <h2 className='mt-2 text-xl font-medium text-gray-700'>BA in Computer Science</h2>
             <p className='mt-2 text-xl font-medium text-gray-500'>Concentration in Human-Computer Interaction</p>
-            <p className='mt-2 text-lg font-medium text-gray-400'>In Progress</p>
           </div>
         </div>
       </>
