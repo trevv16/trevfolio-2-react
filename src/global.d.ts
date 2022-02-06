@@ -32,6 +32,8 @@ export type ProjectType = {
   skills: string[];
   process: [{ order: Number; type: string; content: string }] | undefined;
   github_url: string;
+  createdAt: string;
+  updatedAt: string;
 };
 
 export type SkillType = {
@@ -42,6 +44,8 @@ export type SkillType = {
   description: string;
   projects?: string[] | undefined;
   published: Boolean | string;
+  createdAt?: string;
+  updatedAt?: string;
 };
 
 export type SubscriberType = {

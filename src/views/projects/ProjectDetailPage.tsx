@@ -42,18 +42,18 @@ export default function ProjectDetailPage(props: any) {
             <li>
               <a href={project?.github_url} rel='noopener noreferrer' className='text-gray-400 hover:text-gray-500'>
                 <span className='sr-only'>Github</span>
-                <HiOutlineCode className='h-6 w-6' />
+                <HiOutlineCode className='h-6 w-6' /> View Code
               </a>
             </li>
             <li>
               <a href={project?.demo_url} rel='noopener noreferrer' className='text-gray-400 hover:text-gray-500'>
                 <span className='sr-only'>Demo</span>
-                <HiOutlineEye className='h-6 w-6' />
+                <HiOutlineEye className='h-6 w-6' /> View Demo
               </a>
             </li>
           </ul>
         </div>
-        <p className='font-sans mt-2 text-xl text-primary'>{project?.published}</p>
+        <p className='font-sans mt-2 text-xl text-primary'>{new Date(project?.createdAt || '').toUTCString()}</p>
         <p className='font-sans mt-8 mx-auto text-xl text-gray-500'>{project?.description}</p>
       </div>
     </div>
