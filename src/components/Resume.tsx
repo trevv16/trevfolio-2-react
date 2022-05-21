@@ -172,7 +172,7 @@ export default function Resume(props: any) {
     return (
       <>
         <div className='bg-white'>
-          <div className='max-w-7xl mx-auto py-16 sm:py-24 px-6'>
+          <div className='max-w-7xl mx-auto py-16 sm:py-16 px-6'>
             <div className='text-left'>
               <p className='mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl'>
                 Education
@@ -181,6 +181,7 @@ export default function Resume(props: any) {
             <h1 className='mt-6 text-2xl font-bold text-gray-600'>University of North Carolina at Charlotte</h1>
             <h2 className='mt-2 text-xl font-medium text-gray-700'>BA in Computer Science</h2>
             <p className='mt-2 text-xl font-medium text-gray-500'>Concentration in Human-Computer Interaction</p>
+            <p className='mt-2 text-xl font-medium text-gray-500'>2016-2021</p>
           </div>
         </div>
       </>
