@@ -1,6 +1,9 @@
-import React from 'react';
+interface AlertProps {
+  status: 'success' | 'warn' | 'error';
+  children: any;
+}
 
-export default function Alert(props: any) {
+export default function Alert(props: AlertProps) {
   const SuccessAlert = () => (
     <div className='my-16 rounded-md bg-success p-4'>
       <div className='flex'>
@@ -153,7 +156,7 @@ export default function Alert(props: any) {
 
   return (
     <>
-      {props.status !== null && props.message !== null ? (
+      {props.status !== null ? (
         <>
           {props.status === 'success' && <SuccessAlert />}
 

@@ -1,13 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import api from '../utils/api';
 import { useFormik } from 'formik';
-
 import { Alert } from './index';
-
-type StatusType = {
-  status: string;
-  message: string;
-};
+import { StatusType } from '../global';
 
 export default function Newsletter(props: any) {
   const [statusRes, setStatusRes] = useState<StatusType | null>(null);

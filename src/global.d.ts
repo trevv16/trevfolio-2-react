@@ -6,7 +6,7 @@ type ContactMessageType = {
 };
 
 type StatusType = {
-  status: string;
+  status: 'success' | 'warn' | 'error';
   message: string;
 };
 
