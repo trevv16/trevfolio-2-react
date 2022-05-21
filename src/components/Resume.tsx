@@ -1,71 +1,14 @@
-/* eslint-disable max-len */
 /* eslint-disable no-secrets/no-secrets */
-import React from 'react';
 import shortid from 'shortid';
 import { BookOpenIcon } from '@heroicons/react/outline';
 import { AiOutlineSafetyCertificate } from 'react-icons/ai';
 import dayjs from 'dayjs';
-// import api from '../utils/api';
-// import { useFormik } from 'formik';
 
 import { Icon, SkillList } from '../components/index';
 import { Link } from 'react-router-dom';
 import { SkillType } from '../global';
 
-// type StatusType = {
-//   status: string;
-//   message: string;
-// };
-
 export default function Resume(props: any) {
-  // const [statusRes, setStatusRes] = useState<StatusType | null>(null);
-
-  // const postData = async (data: any) => {
-  //   api
-  //     .post('api/v1/subscribers', data)
-  //     .then((res) => {
-  //       const status = res.data.success;
-  //       if (status === true) {
-  //         setStatusRes({
-  //           status: 'success',
-  //           message: 'Subscribed!'
-  //         });
-  //       }
-  //     })
-  //     .catch(() => {
-  //       setStatusRes({
-  //         status: 'error',
-  //         message: 'Sorry, we were un able to add you, please try again later.'
-  //       });
-  //     });
-  // };
-
-  // const validate = (values: any) => {
-  //   const errors: any = {};
-
-  //   if (!values.email) {
-  //     errors.email = 'Required';
-  //   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-  //     errors.email = 'Invalid email address';
-  //   }
-
-  //   return errors;
-  // };
-
-  // const formik = useFormik({
-  //   initialValues: {
-  //     email: ''
-  //   },
-  //   validate,
-  //   onSubmit: (values) => {
-  //     postData(values);
-  //     formik.resetForm();
-  //     setTimeout(function () {
-  //       setStatusRes(null);
-  //     }, 4000);
-  //   }
-  // });
-
   const skills: SkillType[] = [
     {
       _id: 'k24l1fsgd323mvb89s',
@@ -319,49 +262,6 @@ export default function Resume(props: any) {
     );
   };
 
-  // const Experience = () => {
-  //   return (
-  //     <>
-  //       <div className='bg-white'>
-  //         <div className='max-w-7xl mx-auto py-16 sm:py-24 px-6'>
-  //           <div className='text-left'>
-  //             <p className='mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl'>
-  //               Request My Resume
-  //             </p>
-  //           </div>
-  //           <h2 className='mt-2 text-lg font-medium text-gray-700'>
-  //             Enter an email below and receive a copy of my resume
-  //           </h2>
-  //           <div className='mt-8 sm:w-full sm:max-w-md'>
-  //             <form onSubmit={formik.handleSubmit} className='font-sans sm:flex'>
-  //               <label htmlFor='emailAddress' className='sr-only'>
-  //                 Email address
-  //               </label>
-  //               <input
-  //                 id='email'
-  //                 name='email'
-  //                 type='email'
-  //                 autoComplete='email'
-  //                 onChange={formik.handleChange}
-  //                 value={formik.values.email}
-  //                 required
-  //                 className='w-full border-primary py-3 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white rounded-md'
-  //                 placeholder='Enter your email'
-  //               />
-  //               <button
-  //                 type='submit'
-  //                 className='mt-3 w-full flex items-center justify-center px-5 py-3 border border-transparent shadow text-base font-medium rounded-md text-white bg-primary hover:bg-primaryLight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0'
-  //               >
-  //                 Send Resume
-  //               </button>
-  //             </form>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     </>
-  //   );
-  // };
-
   return (
     <>
       <div className='font-sans container mx-auto max-w-7xl'>
@@ -375,7 +275,6 @@ export default function Resume(props: any) {
       </div>
       <div className='font-sans container mx-auto max-w-7xl mt-12'>
         <Skills />
-        {/* <Experience /> */}
       </div>
     </>
   );

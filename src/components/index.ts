@@ -9,6 +9,7 @@ export { default as Icon } from './Icon';
 export { default as Newsletter } from './Newsletter';
 
 export { default as SkillList } from './SkillList';
+export { default as SkillHeader } from './SkillHeader';
 export { default as ProjectList } from './ProjectList';
 export { default as ProjectCard } from './ProjectCard';
 export { default as ProjectHeader } from './ProjectHeader';
