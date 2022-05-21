@@ -4,7 +4,6 @@ import useFetch from '../../hooks/useFetch';
 import { Alert, Loading, SkillList } from '../../components/index';
 import { SkillType } from '../../global';
 import { Helmet } from 'react-helmet-async';
-import { SITE_NAME, SITE_DESC, SITE_IMG, SITE_URL } from '../../Config';
 import { getSeo } from '../../utils/seo';
 
 export default function SkillsPage() {
@@ -19,11 +18,9 @@ export default function SkillsPage() {
     }
   }, [response, error, isLoading]);
 
-  const title = `Skills | ${SITE_NAME}`;
-
   return (
     <>
-      <Helmet>{getSeo(title, SITE_DESC, SITE_IMG, SITE_URL)}</Helmet>
+      <Helmet>{getSeo('Skills')}</Helmet>
       <div className='container mx-auto'>
         <div className='mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24'>
           <div className='mb-24 space-y-12'>

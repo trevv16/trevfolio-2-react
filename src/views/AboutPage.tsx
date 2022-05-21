@@ -1,15 +1,12 @@
 import { CameraIcon } from '@heroicons/react/solid';
 import { Helmet } from 'react-helmet-async';
 import { Newsletter } from '../components/index';
-import { SITE_DESC, SITE_IMG, SITE_NAME, SITE_URL } from '../Config';
 import { getSeo } from '../utils/seo';
 
 export default function AboutPage() {
-  const title = `About | ${SITE_NAME}`;
-
   return (
     <>
-      <Helmet>{getSeo(title, SITE_DESC, SITE_IMG, SITE_URL)}</Helmet>
+      <Helmet>{getSeo('About')}</Helmet>
       <div className='overflow-hidden'>
         <div className='relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8'>
           <div className='mt-1 hidden lg:block bg-gray-50 absolute top-0 bottom-0 left-3/4 w-screen' />

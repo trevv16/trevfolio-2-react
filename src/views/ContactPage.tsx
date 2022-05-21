@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useFormik } from 'formik';
 import api from '../utils/api';
 import { Alert, Loading } from '../components/index';
 import { StatusType, ContactMessageType } from '../global';
 import { Helmet } from 'react-helmet-async';
-import { SITE_NAME, SITE_DESC, SITE_IMG, SITE_URL } from '../Config';
 import { getSeo } from '../utils/seo';
 
 export default function ContactPage() {
@@ -79,11 +78,9 @@ export default function ContactPage() {
     }
   });
 
-  const title = `Contact | ${SITE_NAME}`;
-
   return (
     <>
-      <Helmet>{getSeo(title, SITE_DESC, SITE_IMG, SITE_URL)}</Helmet>
+      <Helmet>{getSeo('Contact')}</Helmet>
       <div className='py-16 px-4 overflow-hidden sm:px-6 lg:px-8 lg:py-24'>
         <div className='relative max-w-xl mx-auto'>
           <svg

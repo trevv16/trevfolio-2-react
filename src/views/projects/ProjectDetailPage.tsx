@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { HiOutlineEye, HiOutlineCode } from 'react-icons/hi';
 
 import useFetch from '../../hooks/useFetch';
 import { Alert, Loading, SkillList } from '../../components/index';
 import { ProjectType } from '../../global';
 import { Helmet } from 'react-helmet-async';
-import { SITE_NAME, SITE_DESC, SITE_IMG, SITE_URL } from '../../Config';
 import { getSeo } from '../../utils/seo';
 
 export default function ProjectDetailPage(props: any) {
@@ -59,10 +58,9 @@ export default function ProjectDetailPage(props: any) {
     </div>
   );
 
-  const title = `${project?.title || 'Projects'} | ${SITE_NAME}`;
   return (
     <>
-      <Helmet>{getSeo(title, SITE_DESC, SITE_IMG, SITE_URL)}</Helmet>
+      <Helmet>{getSeo(`${project?.title || 'Projects'}`)}</Helmet>
       <div className='container mx-auto'>
         <div className='mx-auto max-w-7xl px-4 sm:py-8 sm:px-6 lg:px-8'>
           {error !== null && <Alert status='error'>{error.message}</Alert>}

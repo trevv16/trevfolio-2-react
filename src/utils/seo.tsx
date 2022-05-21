@@ -1,4 +1,11 @@
-function getSeo(title: string, description: string, image: string, site_url: string) {
+import { SITE_NAME, SITE_DESC, SITE_IMG, SITE_URL } from '../Config';
+
+function getSeo(
+  title: string = SITE_NAME,
+  description: string = SITE_DESC,
+  image: string = SITE_IMG,
+  site_url: string = SITE_URL
+) {
   return (
     <>
       <html lang='en' />

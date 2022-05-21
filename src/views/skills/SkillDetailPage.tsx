@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import dayjs from 'dayjs';
 
 import useFetch from '../../hooks/useFetch';
 import { Alert, Loading, ProjectList, Icon } from '../../components/index';
 import { SkillType } from '../../global';
 import { Helmet } from 'react-helmet-async';
-import { SITE_NAME, SITE_DESC, SITE_IMG, SITE_URL } from '../../Config';
 import { getSeo } from '../../utils/seo';
 
 export default function SkillDetailPage(props: any) {
@@ -79,11 +78,9 @@ export default function SkillDetailPage(props: any) {
     </div>
   );
 
-  const title = `${skill?.name || 'Skills'} | ${SITE_NAME}`;
-
   return (
     <>
-      <Helmet>{getSeo(title, SITE_DESC, SITE_IMG, SITE_URL)}</Helmet>
+      <Helmet>{getSeo(`${skill?.name || 'Skills'}`)}</Helmet>
       <div>
         <div className='max-w-7xl mx-auto pt-8 px-4 sm:py-24 sm:px-6 lg:px-8'>
           {error !== null && <Alert status='error'>{error.message}</Alert>}

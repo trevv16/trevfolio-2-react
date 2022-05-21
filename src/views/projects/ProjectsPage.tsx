@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 import useFetch from '../../hooks/useFetch';
 import { Alert, Loading, ProjectList } from '../../components/index';
 import { ProjectType } from '../../global';
 import { Helmet } from 'react-helmet-async';
-import { SITE_NAME, SITE_DESC, SITE_IMG, SITE_URL } from '../../Config';
 import { getSeo } from '../../utils/seo';
 
 export default function ProjectsPage() {
@@ -19,11 +18,9 @@ export default function ProjectsPage() {
     }
   }, [response, error, isLoading]);
 
-  const title = `Projects | ${SITE_NAME}`;
-
   return (
     <>
-      <Helmet>{getSeo(title, SITE_DESC, SITE_IMG, SITE_URL)}</Helmet>
+      <Helmet>{getSeo('Projects')}</Helmet>
       <div className='mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24'>
         <div className='mb-24 space-y-12'>
           <div className='space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none'>
