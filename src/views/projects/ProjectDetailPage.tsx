@@ -38,24 +38,22 @@ export default function ProjectDetailPage(props: any) {
           </div>
         ) : (
           <>
-            {project && project !== null ? (
-              <ProjectHeader project={project} />
+            {project ? (
+              <>
+                <ProjectHeader project={project} />
+                <div className='mx-auto max-w-7xl px-4 sm:py-8 sm:px-6 lg:px-8'>
+                  <div className='mt-4'>
+                    <h1 className='font-sans text-center text-3xl font-extrabold tracking-tight sm:text-4xl'>
+                      Skills Used
+                    </h1>
+                  </div>
+                  {project?.skills && project.skills.length > 0 && <SkillList skillData={project?.skills} />}
+                </div>
+              </>
             ) : (
               <h1 className='font-sans text-center text-2xl font-bold tracking-tight sm:text-4xl'>
                 Project unavailable
               </h1>
-            )}
-            {project && project !== null && (
-              <div className='mx-auto max-w-7xl px-4 sm:py-8 sm:px-6 lg:px-8'>
-                <div className='mt-4'>
-                  <h1 className='font-sans text-center text-3xl font-extrabold tracking-tight sm:text-4xl'>
-                    Skills Used
-                  </h1>
-                </div>
-                {project?.skills && project?.skills !== null && project?.skills.length > 0 && (
-                  <SkillList skillData={project?.skills} />
-                )}
-              </div>
             )}
           </>
         )}

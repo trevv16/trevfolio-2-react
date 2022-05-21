@@ -4,7 +4,7 @@ import { useFormik } from 'formik';
 import { Alert } from './index';
 import { StatusType } from '../global';
 
-export default function Newsletter(props: any) {
+export default function Newsletter() {
   const [statusRes, setStatusRes] = useState<StatusType | null>(null);
 
   const postData = async (data: any) => {

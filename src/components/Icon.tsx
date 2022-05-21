@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { FaAws, FaSketch, FaNodeJs } from 'react-icons/fa';
 import { FiFigma } from 'react-icons/fi';
 import { AiOutlineGithub, AiOutlineInstagram, AiOutlineLinkedin } from 'react-icons/ai';

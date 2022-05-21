@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 import useFetch from '../../hooks/useFetch';
 import { Alert, Loading, SkillList } from '../../components/index';

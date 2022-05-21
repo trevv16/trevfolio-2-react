@@ -11,7 +11,7 @@ export default function ProjectsPage() {
   const { response, error, isLoading } = useFetch('api/v1/projects');
 
   useEffect(() => {
-    if (response && response !== null) {
+    if (response) {
       setProjects(response.data.data);
     } else {
       setProjects(null);
@@ -34,7 +34,7 @@ export default function ProjectsPage() {
             <div className='transform translate-x-1/3'>
               <Loading />
             </div>
-          ) : projects && projects !== null ? (
+          ) : projects ? (
             <ProjectList data={projects} />
           ) : (
             <p className='font-sans text-2xl text-center text-gray-500'>Projects Unavailable</p>

@@ -1,6 +1,4 @@
-import React from 'react';
-
-export default function Loading(props: any) {
+export default function Loading() {
   return (
     <>
       <div>
