@@ -1,23 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import PublicApp from './PublicApp';
-// import AuthenticatedApp from './AuthenticatedApp';
+import { Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import { PublicLayout } from './components/index';
+import SuspenseFallback from './components/SuspenseFallback';
+
+const HomePage = lazy(() => import('./views/HomePage'));
+const AboutPage = lazy(() => import('./views/AboutPage'));
+const ContactPage = lazy(() => import('./views/ContactPage'));
+const ProjectsPage = lazy(() => import('./views/projects/ProjectsPage'));
+const ProjectDetailPage = lazy(() => import('./views/projects/ProjectDetailPage'));
+const SkillsPage = lazy(() => import('./views/skills/SkillsPage'));
+const SkillDetailPage = lazy(() => import('./views/skills/SkillDetailPage'));
+const Error404 = lazy(() => import('./views/error/Error404'));
+const Error500 = lazy(() => import('./views/error/Error500'));
 
 export default function App(props: any) {
-  const [checkLoggedIn, setCheckLoggedIn] = useState(false);
-  const { isLoggedIn } = props;
+  return (
+    <div>
+      <Router>
+        <PublicLayout>
+          <Suspense fallback={<SuspenseFallback />}>
+            <Switch>
+              <Route exact path='/skills/:skillID' component={SkillDetailPage} />
+              <Route exact path='/skills' component={SkillsPage} />
+              <Route exact path='/projects/:projectID' component={ProjectDetailPage} />
+              <Route exact path='/projects' component={ProjectsPage} />
+              <Route exact path='/about' component={AboutPage} />
+              <Route exact path='/contact' component={ContactPage} />
+              <Route exact path='/' component={HomePage} />
 
-  useEffect(() => {
-    if (localStorage.getItem('token')) {
-      setCheckLoggedIn(true);
-    } else {
-      setCheckLoggedIn(false);
-    }
-  }, [isLoggedIn]);
+              {/* Error Pages */}
+              <Route exact path='/500' component={Error500} />
 
-  if (checkLoggedIn === false && !localStorage.getItem('token')) {
-    return <PublicApp />;
-  }
-
-  // return <AuthenticatedApp />;
-  return <PublicApp />;
+              <Route path='*' component={Error404} />
+            </Switch>
+          </Suspense>
+        </PublicLayout>
+      </Router>
+    </div>
+  );
 }
