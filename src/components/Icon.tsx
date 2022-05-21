@@ -9,7 +9,6 @@ import {
   SiHtml5,
   SiCss3,
   SiTailwindcss,
-  SiReact,
   SiTypescript,
   SiPython,
   SiDjango,
