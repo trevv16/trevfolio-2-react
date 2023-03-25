@@ -36,12 +36,6 @@ export default function Navigation() {
                 <div className='hidden sm:ml-6 sm:flex sm:space-x-8'>
                   {/* Current: "border-primary text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray hover:text-gray-700" */}
                   <Link
-                    to='/about'
-                    className={`${currentPage === '/about' ? activeLink : inactiveLink} ${linkDefault}`}
-                  >
-                    About
-                  </Link>
-                  <Link
                     to='/skills'
                     className={`${currentPage === '/skills' ? activeLink : inactiveLink} ${linkDefault}`}
                   >
@@ -78,12 +72,6 @@ export default function Navigation() {
           <Disclosure.Panel className='sm:hidden'>
             <div className='pt-2 pb-3 space-y-1'>
               {/* Current: "bg-primaryLight border-primary text-primary", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray hover:text-gray-700" */}
-              <Link
-                to='/about'
-                className={`${currentPage === '/about' ? mobileActiveLink : mobileInactiveLink} ${mobileDefaultLink}`}
-              >
-                About
-              </Link>
               <Link
                 to='/skills'
                 className={`${currentPage === '/skills' ? mobileActiveLink : mobileInactiveLink} ${mobileDefaultLink}`}

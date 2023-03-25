@@ -28,7 +28,7 @@ export default function Footer() {
             </a>
 
             <a
-              href='https://instagram.com/trevva_'
+              href='https://instagram.com/trevnjeru'
               target='_blank'
               rel='noopener noreferrer'
               className='text-gray-400 hover:text-gray-500'

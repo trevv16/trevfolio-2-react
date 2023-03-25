@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { FaAws, FaSketch, FaNodeJs } from 'react-icons/fa';
+import { FaAws, FaJava, FaReact, FaSketch, FaNodeJs } from 'react-icons/fa';
 import { FiFigma } from 'react-icons/fi';
 import { AiOutlineGithub, AiOutlineInstagram, AiOutlineLinkedin } from 'react-icons/ai';
 import {
+  SiGooglecloud,
   SiKubernetes,
   SiLinux,
   SiMicrosoftazure,
@@ -53,6 +54,9 @@ export default function HomePage(props: any) {
     switch (skill?.toLowerCase()) {
       case 'aws':
         return <FaAws className={`${size} flex-shrink-0 hover:text-gray-500`} />;
+
+      case 'gcp':
+        return <SiGooglecloud className={`${size} flex-shrink-0 hover:text-gray-500`} />;
 
       case 'linux':
         return <SiLinux className={`${size} flex-shrink-0 hover:text-gray-500`} />;
@@ -111,11 +115,17 @@ export default function HomePage(props: any) {
       case 'next js (react)':
         return <SiNextdotjs className={`${size} flex-shrink-0 hover:text-gray-500`} />;
 
+      case 'react':
+        return <FaReact className={`${size} flex-shrink-0 hover:text-gray-500`} />;
+
       case 'typescript':
         return <SiTypescript className={`${size} flex-shrink-0 hover:text-gray-500`} />;
 
       case 'python':
         return <SiPython className={`${size} flex-shrink-0 hover:text-gray-500`} />;
+
+      case 'java':
+        return <FaJava className={`${size} flex-shrink-0 hover:text-gray-500`} />;
 
       case 'django':
         return <SiDjango className={`${size} flex-shrink-0 hover:text-gray-500`} />;

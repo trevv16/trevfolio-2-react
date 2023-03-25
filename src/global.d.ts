@@ -11,28 +11,28 @@ type StatusType = {
 };
 
 export type ProjectType = {
-  _id: string | undefined;
+  _id?: string;
   featured: string | Boolean;
   title: string;
   description: string;
   thumbnail: string;
-  gallery: string[] | undefined;
-  demo_url: string | undefined;
+  gallery?: string[];
+  demo_url?: string;
   published: Boolean | string;
   skills: string[];
-  process: [{ order: Number; type: string; content: string }] | undefined;
+  process?: [{ order: Number; type: string; content: string }];
   github_url: string;
   createdAt: string;
   updatedAt: string;
 };
 
 export type SkillType = {
-  _id: string | undefined;
+  _id?: string;
   featured: string | Boolean;
   name: string;
   category: string;
   description: string;
-  projects?: string[] | undefined;
+  projects?: string[];
   published: Boolean | string;
   createdAt?: string;
   updatedAt?: string;

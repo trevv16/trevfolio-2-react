@@ -1,0 +1,77 @@
+[
+  {
+    "_id": "60933d9b63678ec1be123a6a",
+    "name": "Golang",
+    "category": "Back-End"
+  },
+  {
+    "_id": "60933d9b63678ec1be123a6a",
+    "name": "Next Js (React)",
+    "category": "Front-End"
+  },
+  {
+    "_id": "60933e5363678ec1be123a6f",
+    "name": "Python",
+    "category": "Back-End"
+  },
+  {
+    "_id": "60933df863678ec1be123a6c",
+    "name": "MongoDB",
+    "category": "Databases"
+  },
+  {
+    "_id": "60933d8f63678ec1be123a69",
+    "name": "Typescript",
+    "category": "Front-End"
+  },
+  {
+    "_id": "60933d8463678ec1be123a68",
+    "name": "Docker",
+    "category": "Dev Ops"
+  },
+  {
+    "_id": "60933e7363678ec1be123a70",
+    "name": "Linux",
+    "category": "Dev Ops"
+  },
+  {
+    "_id": "60933e0f63678ec1be123a6d",
+    "name": "AWS",
+    "category": "Dev Ops"
+  },
+  {
+    "_id": "60933e0f63678ec1be123a6d-2",
+    "name": "GCP",
+    "category": "Dev Ops"
+  },
+  {
+    "_id": "60933eba63678ec1be123a72",
+    "name": "MySQL",
+    "category": "Databases"
+  },
+  {
+    "_id": "60933d3963678ec1be123a67",
+    "name": "Node",
+    "category": "Back-End"
+  },
+  {
+    "_id": "60933d3963678ec1be123a67-2",
+    "name": "Java",
+    "category": "Back-End"
+  },
+  {
+    "_id": "61fea26dcb7f63b13dd89493",
+    "name": "Redis",
+    "category": "Databases"
+  },
+  {
+    "_id": "61fea26dcb7f63b13dd89495",
+    "name": "Jenkins",
+    "category": "Dev Ops"
+  },
+  {
+    "_id": "61fea26dcb7f63b13dd89494",
+    "name": "Postgres",
+    "category": "Databases"
+  }
+]

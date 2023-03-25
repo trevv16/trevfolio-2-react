@@ -5,7 +5,6 @@ import { PublicLayout } from './components/index';
 import SuspenseFallback from './components/SuspenseFallback';
 
 const HomePage = lazy(() => import('./views/HomePage'));
-const AboutPage = lazy(() => import('./views/AboutPage'));
 const ContactPage = lazy(() => import('./views/ContactPage'));
 const ProjectsPage = lazy(() => import('./views/projects/ProjectsPage'));
 const ProjectDetailPage = lazy(() => import('./views/projects/ProjectDetailPage'));
@@ -25,7 +24,6 @@ export default function App(props: any) {
               <Route exact path='/skills' component={SkillsPage} />
               <Route exact path='/projects/:projectID' component={ProjectDetailPage} />
               <Route exact path='/projects' component={ProjectsPage} />
-              <Route exact path='/about' component={AboutPage} />
               <Route exact path='/contact' component={ContactPage} />
               <Route exact path='/' component={HomePage} />
 

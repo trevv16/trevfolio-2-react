@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import dayjs from 'dayjs';
 
 import useFetch from '../../hooks/useFetch';
 import { Alert, Loading, ProjectList, SkillHeader } from '../../components/index';
@@ -19,34 +18,6 @@ export default function SkillDetailPage(props: any) {
       setSkill(null);
     }
   }, [response, error, isLoading]);
-
-  const dateFormat = 'MMM D, YYYY';
-  const projects = [
-    {
-      _id: 'ajk324n2krw6f7ade',
-      title: 'Trevfolio',
-      published: dayjs('2019-05-16').format(dateFormat),
-      thumbnail: 'https://source.unsplash.com/random/600x300',
-      github_url: 'https://github.com/trevva16/trevfolio-2-node',
-      demo_url: 'https://trevornjeru.com'
-    },
-    {
-      _id: 'ajk32adsfarw6f7ade',
-      title: 'Trevfolio',
-      published: dayjs('2020-03-04').format(dateFormat),
-      thumbnail: 'https://source.unsplash.com/random/500x300',
-      github_url: 'https://github.com/trevva16/trevfolio-2-node',
-      demo_url: 'https://trevornjeru.com'
-    },
-    {
-      _id: 'a24n2krwasdfaade',
-      title: 'Trevfolio',
-      published: dayjs('2019-11-25').format(dateFormat),
-      thumbnail: 'https://source.unsplash.com/random/400x200',
-      github_url: 'https://github.com/trevva16/trevfolio-2-node',
-      demo_url: 'https://trevornjeru.com'
-    }
-  ];
 
   return (
     <>
@@ -74,7 +45,7 @@ export default function SkillDetailPage(props: any) {
                           View the projects I have completed relevant to this skill.
                         </p>
                       </div>
-                      <ProjectList data={projects} />
+                      <ProjectList data={skill.projects || []} />
                     </div>
                   </div>
                 )}
