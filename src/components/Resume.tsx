@@ -11,9 +11,9 @@ import skills from '../data/skills.json';
 export default function Resume(props: any) {
   const Intro = () => (
     <>
-      <div className='font-sans max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8'>
-        <div className='-mt-10 my-8 aspect-w-16 aspect-h-6'>
-          <img className='object-cover shadow-lg rounded-lg' src='trev-intro.jpg' alt='' />
+      <div className='font-sans max-w-7xl mx-auto py-4 px-4 sm:py-8 sm:px-6 lg:px-8'>
+        <div className='flex justify-center mb-8'>
+          <img className='object-cover shadow-lg rounded-lg w-96' src='trev.jpg' alt='Trevor' />
         </div>
         <div className='text-center'>
           <h1 className='font-extrabold text-gray-900 text-5xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-6xl'>
