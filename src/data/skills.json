@@ -30,11 +30,6 @@
     "category": "Dev Ops"
   },
   {
-    "_id": "60933e7363678ec1be123a70",
-    "name": "Linux",
-    "category": "Dev Ops"
-  },
-  {
     "_id": "60933e0f63678ec1be123a6d",
     "name": "AWS",
     "category": "Dev Ops"
@@ -73,5 +68,15 @@
     "_id": "61fea26dcb7f63b13dd89494",
     "name": "Postgres",
     "category": "Databases"
+  },
+  {
+    "_id": "61fea26dcb7f63b13dd89494",
+    "name": "Redux",
+    "category": "Front-End"
+  },
+  {
+    "_id": "654850ab1ec39da213177358",
+    "name": "React Testing Library",
+    "category": "Front-End"
   }
 ]

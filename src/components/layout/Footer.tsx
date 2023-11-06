@@ -26,16 +26,6 @@ export default function Footer() {
               <span className='sr-only'>GitHub</span>
               <Icon skillName='github' size='w-6 h-6' />
             </a>
-
-            <a
-              href='https://instagram.com/trevnjeru'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='text-gray-400 hover:text-gray-500'
-            >
-              <span className='sr-only'>Instagram</span>
-              <Icon skillName='instagram' size='w-6 h-6' />
-            </a>
           </div>
           <div className='mt-8 md:mt-0 md:order-1'>
             <p className='text-center text-base text-gray-400'>

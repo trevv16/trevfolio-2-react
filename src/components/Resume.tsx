@@ -43,16 +43,6 @@ export default function Resume(props: any) {
               <span className='sr-only'>GitHub</span>
               <Icon skillName='github' size='w-8 h-8' />
             </a>
-
-            <a
-              href='https://instagram.com/trevnjeru'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='text-gray-400 hover:text-gray-500'
-            >
-              <span className='sr-only'>Instagram</span>
-              <Icon skillName='instagram' size='w-8 h-8' />
-            </a>
           </div>
           <Link to='projects'>
             <button className='px-5 py-3 border border-transparent shadow text-base font-bold rounded-md text-white bg-primary hover:bg-primaryLight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0'>
@@ -126,7 +116,7 @@ export default function Resume(props: any) {
                         </span>
                       </div>
                       <p className='mt-1 text-gray-500 text-sm truncate'>{cert.cert_from}</p>
-                      <p className='mt-1 text-gray-500 text-sm truncate'>{dayjs(cert.date).format('MMM YYYY')}</p>
+                      <p className='mt-1 text-gray-500 text-sm truncate'>{dayjs(cert.date).format('YYYY')}</p>
                     </div>
                     <Icon size='w-10 h-10' skillName={cert.skill_icon} />
                   </div>

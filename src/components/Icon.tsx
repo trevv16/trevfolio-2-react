@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FaAws, FaJava, FaReact, FaSketch, FaNodeJs } from 'react-icons/fa';
 import { FiFigma } from 'react-icons/fi';
-import { AiOutlineGithub, AiOutlineInstagram, AiOutlineLinkedin } from 'react-icons/ai';
+import { AiOutlineGithub, AiOutlineLinkedin } from 'react-icons/ai';
 import {
   SiGooglecloud,
   SiKubernetes,
@@ -25,7 +25,9 @@ import {
   SiCypress,
   SiTerraform,
   SiAnsible,
-  SiNextdotjs
+  SiNextdotjs,
+  SiRedux,
+  SiTestinglibrary
 } from 'react-icons/si';
 import { IoLogoSass } from 'react-icons/io';
 
@@ -115,8 +117,14 @@ export default function HomePage(props: any) {
       case 'next js (react)':
         return <SiNextdotjs className={`${size} flex-shrink-0 hover:text-gray-500`} />;
 
+      case 'react testing library':
+        return <SiTestinglibrary className={`${size} flex-shrink-0 hover:text-gray-500`} />;
+
       case 'react':
         return <FaReact className={`${size} flex-shrink-0 hover:text-gray-500`} />;
+
+      case 'redux':
+        return <SiRedux className={`${size} flex-shrink-0 hover:text-gray-500`} />;
 
       case 'typescript':
         return <SiTypescript className={`${size} flex-shrink-0 hover:text-gray-500`} />;
@@ -169,9 +177,6 @@ export default function HomePage(props: any) {
 
       case 'github':
         return <AiOutlineGithub className={`${size} flex-shrink-0 hover:text-gray-500`} />;
-
-      case 'instagram':
-        return <AiOutlineInstagram className={`${size} flex-shrink-0 hover:text-gray-500`} />;
 
       default:
         return;
