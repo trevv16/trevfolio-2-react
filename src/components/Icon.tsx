@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FaAws, FaJava, FaReact, FaSketch, FaNodeJs } from 'react-icons/fa';
+import { FaAws, FaJava, FaSketch, FaNodeJs } from 'react-icons/fa';
 import { FiFigma } from 'react-icons/fi';
 import { AiOutlineGithub, AiOutlineLinkedin } from 'react-icons/ai';
 import {
@@ -119,9 +119,6 @@ export default function HomePage(props: any) {
 
       case 'react testing library':
         return <SiTestinglibrary className={`${size} flex-shrink-0 hover:text-gray-500`} />;
-
-      case 'react':
-        return <FaReact className={`${size} flex-shrink-0 hover:text-gray-500`} />;
 
       case 'redux':
         return <SiRedux className={`${size} flex-shrink-0 hover:text-gray-500`} />;
